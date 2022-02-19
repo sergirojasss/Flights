@@ -12,8 +12,6 @@
 		79F5FD4C17B1109F9AAFCD3A /* Pods_Flights_FlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588B84CE100CF7AAD913FFEE /* Pods_Flights_FlightsUITests.framework */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
-		A8C6E53E27C1019700E573AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53D27C1019700E573AC /* ViewController.swift */; };
-		A8C6E54127C1019700E573AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E53F27C1019700E573AC /* Main.storyboard */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
 		A8C6E54627C1019900E573AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54427C1019900E573AC /* LaunchScreen.storyboard */; };
 		A8C6E55127C1019900E573AC /* FlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55027C1019900E573AC /* FlightsTests.swift */; };
@@ -32,6 +30,21 @@
 		A8C6E58727C1080900E573AC /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58627C1080900E573AC /* Airline.swift */; };
 		A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */; };
 		A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */; };
+		A8C6E59727C1468C00E573AC /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59627C1468C00E573AC /* TabRouter.swift */; };
+		A8C6E59927C1469400E573AC /* TabInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59827C1469400E573AC /* TabInteractor.swift */; };
+		A8C6E59B27C146A100E573AC /* TabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59A27C146A100E573AC /* TabProtocols.swift */; };
+		A8C6E59D27C146AA00E573AC /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59C27C146AA00E573AC /* TabViewController.swift */; };
+		A8C6E59F27C146B300E573AC /* TabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59E27C146B300E573AC /* TabPresenter.swift */; };
+		A8C6E5AA27C14B0800E573AC /* InboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */; };
+		A8C6E5AB27C14B0800E573AC /* InboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */; };
+		A8C6E5AC27C14B0800E573AC /* InboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */; };
+		A8C6E5AD27C14B0800E573AC /* InboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A727C14B0800E573AC /* InboundRouter.swift */; };
+		A8C6E5AE27C14B0800E573AC /* InboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A927C14B0800E573AC /* InboundViewController.swift */; };
+		A8C6E5B927C14C0800E573AC /* OutboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */; };
+		A8C6E5BA27C14C0800E573AC /* OutboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */; };
+		A8C6E5BB27C14C0800E573AC /* OutboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */; };
+		A8C6E5BC27C14C0800E573AC /* OutboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */; };
+		A8C6E5BD27C14C0800E573AC /* OutboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +75,6 @@
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A8C6E53D27C1019700E573AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A8C6E54027C1019700E573AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8C6E54227C1019900E573AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8C6E54527C1019900E573AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8C6E54727C1019900E573AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +96,21 @@
 		A8C6E58627C1080900E573AC /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
 		A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUseCase.swift; sourceTree = "<group>"; };
 		A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUseCase.swift; sourceTree = "<group>"; };
+		A8C6E59627C1468C00E573AC /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
+		A8C6E59827C1469400E573AC /* TabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInteractor.swift; sourceTree = "<group>"; };
+		A8C6E59A27C146A100E573AC /* TabProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocols.swift; sourceTree = "<group>"; };
+		A8C6E59C27C146AA00E573AC /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		A8C6E59E27C146B300E573AC /* TabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPresenter.swift; sourceTree = "<group>"; };
+		A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundInteractor.swift; sourceTree = "<group>"; };
+		A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundProtocols.swift; sourceTree = "<group>"; };
+		A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundPresenter.swift; sourceTree = "<group>"; };
+		A8C6E5A727C14B0800E573AC /* InboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundRouter.swift; sourceTree = "<group>"; };
+		A8C6E5A927C14B0800E573AC /* InboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundViewController.swift; sourceTree = "<group>"; };
+		A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundRouter.swift; sourceTree = "<group>"; };
+		A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundViewController.swift; sourceTree = "<group>"; };
+		A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundPresenter.swift; sourceTree = "<group>"; };
+		A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundInteractor.swift; sourceTree = "<group>"; };
+		A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundProtocols.swift; sourceTree = "<group>"; };
 		C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights-FlightsUITests.release.xcconfig"; path = "Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,8 +174,6 @@
 				A8C6E57027C102E600E573AC /* Presentation */,
 				A8C6E53927C1019700E573AC /* AppDelegate.swift */,
 				A8C6E53B27C1019700E573AC /* SceneDelegate.swift */,
-				A8C6E53D27C1019700E573AC /* ViewController.swift */,
-				A8C6E53F27C1019700E573AC /* Main.storyboard */,
 				A8C6E54227C1019900E573AC /* Assets.xcassets */,
 				A8C6E54427C1019900E573AC /* LaunchScreen.storyboard */,
 				A8C6E54727C1019900E573AC /* Info.plist */,
@@ -207,6 +231,9 @@
 		A8C6E57027C102E600E573AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A8C6E58E27C145F400E573AC /* TabController */,
+				A8C6E58D27C145E300E573AC /* Inbound */,
+				A8C6E58C27C145E000E573AC /* Outbound */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -245,6 +272,162 @@
 				A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		A8C6E58C27C145E000E573AC /* Outbound */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B527C14C0800E573AC /* Interactor */,
+				A8C6E5B327C14C0800E573AC /* Presenter */,
+				A8C6E5B727C14C0800E573AC /* Protocols */,
+				A8C6E5AF27C14C0800E573AC /* Router */,
+				A8C6E5B127C14C0800E573AC /* View */,
+			);
+			path = Outbound;
+			sourceTree = "<group>";
+		};
+		A8C6E58D27C145E300E573AC /* Inbound */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A027C14B0800E573AC /* Interactor */,
+				A8C6E5A427C14B0800E573AC /* Presenter */,
+				A8C6E5A227C14B0800E573AC /* Protocols */,
+				A8C6E5A627C14B0800E573AC /* Router */,
+				A8C6E5A827C14B0800E573AC /* View */,
+			);
+			path = Inbound;
+			sourceTree = "<group>";
+		};
+		A8C6E58E27C145F400E573AC /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59527C1466D00E573AC /* Router */,
+				A8C6E59427C1466800E573AC /* Interactor */,
+				A8C6E59327C1465F00E573AC /* Protocols */,
+				A8C6E59227C1465900E573AC /* View */,
+				A8C6E59127C1465100E573AC /* Presenter */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		A8C6E59127C1465100E573AC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59E27C146B300E573AC /* TabPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A8C6E59227C1465900E573AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59C27C146AA00E573AC /* TabViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8C6E59327C1465F00E573AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59A27C146A100E573AC /* TabProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A8C6E59427C1466800E573AC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59827C1469400E573AC /* TabInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A8C6E59527C1466D00E573AC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E59627C1468C00E573AC /* TabRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A8C6E5A027C14B0800E573AC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A8C6E5A227C14B0800E573AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A8C6E5A427C14B0800E573AC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A8C6E5A627C14B0800E573AC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A727C14B0800E573AC /* InboundRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A8C6E5A827C14B0800E573AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5A927C14B0800E573AC /* InboundViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8C6E5AF27C14C0800E573AC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A8C6E5B127C14C0800E573AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8C6E5B327C14C0800E573AC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A8C6E5B527C14C0800E573AC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A8C6E5B727C14C0800E573AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		AC17DE8F22C917F7066151F0 /* Pods */ = {
@@ -381,7 +564,6 @@
 			files = (
 				A8C6E54627C1019900E573AC /* LaunchScreen.storyboard in Resources */,
 				A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */,
-				A8C6E54127C1019700E573AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,19 +693,33 @@
 			files = (
 				A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */,
 				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
-				A8C6E53E27C1019700E573AC /* ViewController.swift in Sources */,
+				A8C6E5AD27C14B0800E573AC /* InboundRouter.swift in Sources */,
+				A8C6E59B27C146A100E573AC /* TabProtocols.swift in Sources */,
+				A8C6E5B927C14C0800E573AC /* OutboundRouter.swift in Sources */,
 				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,
 				A8C6E56B27C102AB00E573AC /* Box.swift in Sources */,
 				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
+				A8C6E5BA27C14C0800E573AC /* OutboundViewController.swift in Sources */,
+				A8C6E5BD27C14C0800E573AC /* OutboundProtocols.swift in Sources */,
 				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
+				A8C6E5AE27C14B0800E573AC /* InboundViewController.swift in Sources */,
+				A8C6E59D27C146AA00E573AC /* TabViewController.swift in Sources */,
+				A8C6E5BB27C14C0800E573AC /* OutboundPresenter.swift in Sources */,
 				A8C6E58727C1080900E573AC /* Airline.swift in Sources */,
 				A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */,
+				A8C6E59727C1468C00E573AC /* TabRouter.swift in Sources */,
 				A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */,
 				A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */,
+				A8C6E5AA27C14B0800E573AC /* InboundInteractor.swift in Sources */,
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
+				A8C6E5AB27C14B0800E573AC /* InboundProtocols.swift in Sources */,
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
+				A8C6E59F27C146B300E573AC /* TabPresenter.swift in Sources */,
 				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
+				A8C6E5BC27C14C0800E573AC /* OutboundInteractor.swift in Sources */,
 				A8C6E58527C1080000E573AC /* Flight.swift in Sources */,
+				A8C6E5AC27C14B0800E573AC /* InboundPresenter.swift in Sources */,
+				A8C6E59927C1469400E573AC /* TabInteractor.swift in Sources */,
 				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,14 +757,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A8C6E53F27C1019700E573AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A8C6E54027C1019700E573AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A8C6E54427C1019900E573AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -631,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -686,7 +874,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -708,9 +896,9 @@
 				INFOPLIST_FILE = Flights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -736,9 +924,9 @@
 				INFOPLIST_FILE = Flights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
