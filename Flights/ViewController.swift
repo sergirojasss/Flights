@@ -18,41 +18,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         Single.zip(useCase.execute(), useCase2.execute())
-            .map { (airlines, flights) -> ([Airline], [Flight]) in
-                let xxx = airlines
-                let eee = flights
-                return (airlines, flights)
-            }.catch  { Error in
-                    .error(ServiceError.responseError)
-            }
-        //            .catchErrorJustReturn(
-        //                ([],[])
-        //            )
-        
-        //        useCase.execute()
-        //            .observe(on: MainScheduler.instance)
-        //            .subscribe{ event in
-        //                switch event {
-        //                case .success(let airlinesList):
-        //                    let airliens = airlinesList
-        //                    print(airliens)
-        //                case .failure(_):
-        //                    //TODO: failure case
-        //                    break
-        //                }
-        //            }.disposed(by: disposeBag)
-        //
-        //        useCase2.execute()
-        //            .observe(on: MainScheduler.instance)
-        //            .subscribe{ event in
-        //                switch event {
-        //                case .success(let flights):
-        //                    let flights = flights
-        //                    print(flights)
-        //                case .failure(_):
-        //                    //TODO: failure case
-        //                    break
-        //                }
-        //            }.disposed(by: disposeBag)
+            .subscribe { [weak self] event in
+                switch event {
+                case .success(let airlines, let flights):
+                    print(airlines)
+                    print(flights)
+                case .failure(let error):
+                    print(error)
+                }
+            }.disposed(by: disposeBag)
     }
 }

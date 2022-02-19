@@ -21,6 +21,8 @@ final class DefaultAirlinesUseCase: AirlinesUseCase {
     }
     
     func execute() -> Single<[Airline]> {
-        return airlinesListRepo.airlinesList().map{ $0.toDomain() }
+        return airlinesListRepo.airlinesList().flatMap { response in
+            return .just(response.map { $0.toDomain() })
+        }
     }
 }

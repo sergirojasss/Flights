@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 final class DefaultAirlinesRepository: AirlinesRepository {
-    func airlinesList() -> Single<AirlinesListResponse> {
+    func airlinesList() -> Single<[AirlinesResponse]> {
         
         return Single.create { single -> Disposable in
             //TODO: Magic numbers
@@ -19,7 +19,7 @@ final class DefaultAirlinesRepository: AirlinesRepository {
             AF.request(url).response { response in
                 switch response.data {
                 case .some(let data):
-                    guard let response = try? JSONDecoder().decode(AirlinesListResponse.self, from: data) else {
+                    guard let response = try? JSONDecoder().decode([AirlinesResponse].self, from: data) else {
                         single(.failure(ServiceError.mappingError))
                         return
                     }

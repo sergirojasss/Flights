@@ -7,15 +7,6 @@
 
 import Foundation
 
-//MARK: - AirlinesListResponse
-struct AirlinesListResponse: Codable {
-    let airlinesResponse: [AirlinesResponse]
-    
-    func toDomain() -> [Airline] {
-        return airlinesResponse.map{ $0.toDomain() }
-    }
-}
-
 
 // MARK: - AirlineResponse
 struct AirlinesResponse: Codable {
