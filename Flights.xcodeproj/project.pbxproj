@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0410D5BE61DE2150667AEDBE /* Pods_Flights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */; };
+		15BD69D1EF78E0AD21FBFBEC /* Pods_FlightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9A40C15C1F77CE2B07CE0B /* Pods_FlightsTests.framework */; };
+		79F5FD4C17B1109F9AAFCD3A /* Pods_Flights_FlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588B84CE100CF7AAD913FFEE /* Pods_Flights_FlightsUITests.framework */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E53E27C1019700E573AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53D27C1019700E573AC /* ViewController.swift */; };
@@ -16,6 +19,19 @@
 		A8C6E55127C1019900E573AC /* FlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55027C1019900E573AC /* FlightsTests.swift */; };
 		A8C6E55B27C1019900E573AC /* FlightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55A27C1019900E573AC /* FlightsUITests.swift */; };
 		A8C6E55D27C1019900E573AC /* FlightsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55C27C1019900E573AC /* FlightsUITestsLaunchTests.swift */; };
+		A8C6E56B27C102AB00E573AC /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E56A27C102AB00E573AC /* Box.swift */; };
+		A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */; };
+		A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57127C1030A00E573AC /* FlightsRepository.swift */; };
+		A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */; };
+		A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57627C1033B00E573AC /* Flight+Decodable.swift */; };
+		A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57827C1034700E573AC /* Airline+Decodable.swift */; };
+		A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57D27C103A100E573AC /* FlightsRepositoryProtocol.swift */; };
+		A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */; };
+		A8C6E58327C1071300E573AC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58227C1071300E573AC /* Errors.swift */; };
+		A8C6E58527C1080000E573AC /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58427C1080000E573AC /* Flight.swift */; };
+		A8C6E58727C1080900E573AC /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58627C1080900E573AC /* Airline.swift */; };
+		A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */; };
+		A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F02A193FE988064466D5A05 /* Pods-FlightsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightsTests.release.xcconfig"; path = "Target Support Files/Pods-FlightsTests/Pods-FlightsTests.release.xcconfig"; sourceTree = "<group>"; };
+		10E64D9673A93084FA61C951 /* Pods-Flights-FlightsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights-FlightsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1365C861F96F00C02ABE9300 /* Pods-Flights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights.release.xcconfig"; path = "Target Support Files/Pods-Flights/Pods-Flights.release.xcconfig"; sourceTree = "<group>"; };
+		588B84CE100CF7AAD913FFEE /* Pods_Flights_FlightsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights_FlightsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9A40C15C1F77CE2B07CE0B /* Pods_FlightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AEF99012B613CF1C460E24D /* Pods-Flights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights.debug.xcconfig"; path = "Target Support Files/Pods-Flights/Pods-Flights.debug.xcconfig"; sourceTree = "<group>"; };
+		82DBA47469D276C71F58FAA9 /* Pods-FlightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightsTests.debug.xcconfig"; path = "Target Support Files/Pods-FlightsTests/Pods-FlightsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +72,21 @@
 		A8C6E55627C1019900E573AC /* FlightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E55A27C1019900E573AC /* FlightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUITests.swift; sourceTree = "<group>"; };
 		A8C6E55C27C1019900E573AC /* FlightsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A8C6E56A27C102AB00E573AC /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+ImageView.swift"; sourceTree = "<group>"; };
+		A8C6E57127C1030A00E573AC /* FlightsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRepository.swift; sourceTree = "<group>"; };
+		A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRepository.swift; sourceTree = "<group>"; };
+		A8C6E57627C1033B00E573AC /* Flight+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+Decodable.swift"; sourceTree = "<group>"; };
+		A8C6E57827C1034700E573AC /* Airline+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airline+Decodable.swift"; sourceTree = "<group>"; };
+		A8C6E57D27C103A100E573AC /* FlightsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A8C6E58227C1071300E573AC /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A8C6E58427C1080000E573AC /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		A8C6E58627C1080900E573AC /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUseCase.swift; sourceTree = "<group>"; };
+		A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUseCase.swift; sourceTree = "<group>"; };
+		C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights-FlightsUITests.release.xcconfig"; path = "Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0410D5BE61DE2150667AEDBE /* Pods_Flights.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BD69D1EF78E0AD21FBFBEC /* Pods_FlightsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F5FD4C17B1109F9AAFCD3A /* Pods_Flights_FlightsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +124,8 @@
 				A8C6E54F27C1019900E573AC /* FlightsTests */,
 				A8C6E55927C1019900E573AC /* FlightsUITests */,
 				A8C6E53727C1019700E573AC /* Products */,
+				AC17DE8F22C917F7066151F0 /* Pods */,
+				D9652987BC86C365F0037242 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +142,10 @@
 		A8C6E53827C1019700E573AC /* Flights */ = {
 			isa = PBXGroup;
 			children = (
+				A8C6E56927C1029C00E573AC /* Commons */,
+				A8C6E56E27C102D600E573AC /* Data */,
+				A8C6E56F27C102DD00E573AC /* Domain */,
+				A8C6E57027C102E600E573AC /* Presentation */,
 				A8C6E53927C1019700E573AC /* AppDelegate.swift */,
 				A8C6E53B27C1019700E573AC /* SceneDelegate.swift */,
 				A8C6E53D27C1019700E573AC /* ViewController.swift */,
@@ -127,6 +174,102 @@
 			path = FlightsUITests;
 			sourceTree = "<group>";
 		};
+		A8C6E56927C1029C00E573AC /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E56A27C102AB00E573AC /* Box.swift */,
+				A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */,
+				A8C6E58227C1071300E573AC /* Errors.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		A8C6E56E27C102D600E573AC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E57527C1032900E573AC /* Decodables */,
+				A8C6E57127C1030A00E573AC /* FlightsRepository.swift */,
+				A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A8C6E56F27C102DD00E573AC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E57C27C1037400E573AC /* Interfaces */,
+				A8C6E57B27C1036C00E573AC /* Entities */,
+				A8C6E57A27C1036500E573AC /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A8C6E57027C102E600E573AC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A8C6E57527C1032900E573AC /* Decodables */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E57627C1033B00E573AC /* Flight+Decodable.swift */,
+				A8C6E57827C1034700E573AC /* Airline+Decodable.swift */,
+			);
+			path = Decodables;
+			sourceTree = "<group>";
+		};
+		A8C6E57A27C1036500E573AC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */,
+				A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A8C6E57B27C1036C00E573AC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E58427C1080000E573AC /* Flight.swift */,
+				A8C6E58627C1080900E573AC /* Airline.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A8C6E57C27C1037400E573AC /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E57D27C103A100E573AC /* FlightsRepositoryProtocol.swift */,
+				A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		AC17DE8F22C917F7066151F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AEF99012B613CF1C460E24D /* Pods-Flights.debug.xcconfig */,
+				1365C861F96F00C02ABE9300 /* Pods-Flights.release.xcconfig */,
+				10E64D9673A93084FA61C951 /* Pods-Flights-FlightsUITests.debug.xcconfig */,
+				F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */,
+				82DBA47469D276C71F58FAA9 /* Pods-FlightsTests.debug.xcconfig */,
+				0F02A193FE988064466D5A05 /* Pods-FlightsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D9652987BC86C365F0037242 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */,
+				588B84CE100CF7AAD913FFEE /* Pods_Flights_FlightsUITests.framework */,
+				6A9A40C15C1F77CE2B07CE0B /* Pods_FlightsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8C6E56027C1019900E573AC /* Build configuration list for PBXNativeTarget "Flights" */;
 			buildPhases = (
+				69837F5F461BD83296BC1116 /* [CP] Check Pods Manifest.lock */,
 				A8C6E53227C1019700E573AC /* Sources */,
 				A8C6E53327C1019700E573AC /* Frameworks */,
 				A8C6E53427C1019700E573AC /* Resources */,
+				43C6E0A5D52FC6C7202BE8B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8C6E56327C1019900E573AC /* Build configuration list for PBXNativeTarget "FlightsTests" */;
 			buildPhases = (
+				4DB02689494468BF04F19263 /* [CP] Check Pods Manifest.lock */,
 				A8C6E54827C1019900E573AC /* Sources */,
 				A8C6E54927C1019900E573AC /* Frameworks */,
 				A8C6E54A27C1019900E573AC /* Resources */,
@@ -169,9 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8C6E56627C1019900E573AC /* Build configuration list for PBXNativeTarget "FlightsUITests" */;
 			buildPhases = (
+				7DAF9E98657B1C81783135B3 /* [CP] Check Pods Manifest.lock */,
 				A8C6E55227C1019900E573AC /* Sources */,
 				A8C6E55327C1019900E573AC /* Frameworks */,
 				A8C6E55427C1019900E573AC /* Resources */,
+				CD24B37529BBAB7C4462C411 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +401,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43C6E0A5D52FC6C7202BE8B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flights/Pods-Flights-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DB02689494468BF04F19263 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlightsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69837F5F461BD83296BC1116 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flights-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DAF9E98657B1C81783135B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flights-FlightsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD24B37529BBAB7C4462C411 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A8C6E53227C1019700E573AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */,
+				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
 				A8C6E53E27C1019700E573AC /* ViewController.swift in Sources */,
+				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,
+				A8C6E56B27C102AB00E573AC /* Box.swift in Sources */,
+				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
+				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
+				A8C6E58727C1080900E573AC /* Airline.swift in Sources */,
+				A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */,
+				A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */,
 				A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */,
+				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
+				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
+				A8C6E58527C1080000E573AC /* Flight.swift in Sources */,
+				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +698,7 @@
 		};
 		A8C6E56127C1019900E573AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEF99012B613CF1C460E24D /* Pods-Flights.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,6 +726,7 @@
 		};
 		A8C6E56227C1019900E573AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1365C861F96F00C02ABE9300 /* Pods-Flights.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +754,7 @@
 		};
 		A8C6E56427C1019900E573AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82DBA47469D276C71F58FAA9 /* Pods-FlightsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +779,7 @@
 		};
 		A8C6E56527C1019900E573AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F02A193FE988064466D5A05 /* Pods-FlightsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +804,7 @@
 		};
 		A8C6E56727C1019900E573AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10E64D9673A93084FA61C951 /* Pods-Flights-FlightsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +827,7 @@
 		};
 		A8C6E56827C1019900E573AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
