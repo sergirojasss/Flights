@@ -27,8 +27,15 @@ final class InboundInteractor {
 }
 
 extension InboundInteractor: InboundInteractorProtocol {
-    func getFlights() -> Single<[FlightEntity]> {
-        dependencies.flightsUseCase.execute(orderBy: .asc)
+    func getFlights() -> Single<(inbound: [FlightModel], outbound: [FlightModel])> {
+        dependencies.flightsUseCase.execute(orderBy: .asc).map { result -> (inbound: [FlightModel], outbound: [FlightModel]) in
+            var inbound: [FlightModel] = []
+            var outbound: [FlightModel] = []
+            for flight in result {
+                flight.type == .inbound ? inbound.append(flight.toModel()) : outbound.append(flight.toModel())
+            }
+            return (inbound, outbound)
+        }
     }
     func getAirlines() -> Single<[AirlineEntity]> {
         dependencies.airlinesUseCase.execute()

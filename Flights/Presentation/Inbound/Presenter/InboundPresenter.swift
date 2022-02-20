@@ -15,11 +15,17 @@ final class InboundPresenter {
     
     private let disposeBag = DisposeBag()
     
-    var flights: [FlightModel] = [] {
+    var outbound: [InboundViewControllerListElements] = [] {
         didSet {
             view.reloadFlights()
         }
     }
+    var inbound: [InboundViewControllerListElements] = [] {
+        didSet {
+            view.reloadFlights()
+        }
+    }
+
     
     init(withView view: InboundViewProtocol, interactor: InboundInteractorProtocol, router: InboundRouterProtocol) {
         self.view = view
@@ -34,8 +40,9 @@ extension InboundPresenter: InboundPresenterProtocol {
             .observe(on: MainScheduler.instance)
             .subscribe{ event in
                 switch event {
-                case .success(let flightsListEntity):
-                    self.flights = flightsListEntity.map{$0.toModel()}
+                case .success(let model):
+                    self.inbound = model.inbound.map{InboundViewControllerListElements.flightCell(model: FlightCellModel(from: $0))}
+                    self.outbound = model.outbound.map{InboundViewControllerListElements.flightCell(model: FlightCellModel(from: $0))}
                 case .failure(let error):
                     if let error = error as? ServiceError {
                         self.view.showError(error)

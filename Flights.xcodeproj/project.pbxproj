@@ -44,6 +44,9 @@
 		A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */; };
 		A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */; };
 		A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */; };
+		A8C6E5F227C2499200E573AC /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F127C2499200E573AC /* FlightCell.swift */; };
+		A8C6E5F527C249A800E573AC /* FlightCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F427C249A800E573AC /* FlightCellModel.swift */; };
+		A8C6E5F727C24A7300E573AC /* NibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F627C24A7300E573AC /* NibReusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,9 @@
 		A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportProtocol.swift; sourceTree = "<group>"; };
 		A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDelegate.swift; sourceTree = "<group>"; };
 		A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDatasource.swift; sourceTree = "<group>"; };
+		A8C6E5F127C2499200E573AC /* FlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
+		A8C6E5F427C249A800E573AC /* FlightCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCellModel.swift; sourceTree = "<group>"; };
+		A8C6E5F627C24A7300E573AC /* NibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusable.swift; sourceTree = "<group>"; };
 		C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights-FlightsUITests.release.xcconfig"; path = "Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +208,7 @@
 				A8C6E56A27C102AB00E573AC /* Box.swift */,
 				A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */,
 				A8C6E58227C1071300E573AC /* Errors.swift */,
+				A8C6E5F627C24A7300E573AC /* NibReusable.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 		A8C6E57027C102E600E573AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A8C6E5F027C2498400E573AC /* Cells */,
 				A8C6E5E527C23AAA00E573AC /* Models */,
 				A8C6E5D227C238AE00E573AC /* Inbound */,
 			);
@@ -362,6 +370,23 @@
 				A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A8C6E5F027C2498400E573AC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5F327C2499A00E573AC /* FlightCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A8C6E5F327C2499A00E573AC /* FlightCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5F127C2499200E573AC /* FlightCell.swift */,
+				A8C6E5F427C249A800E573AC /* FlightCellModel.swift */,
+			);
+			path = FlightCell;
 			sourceTree = "<group>";
 		};
 		AC17DE8F22C917F7066151F0 /* Pods */ = {
@@ -644,12 +669,15 @@
 				A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */,
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
 				A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */,
+				A8C6E5F227C2499200E573AC /* FlightCell.swift in Sources */,
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
 				A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */,
 				A8C6E5E427C238ED00E573AC /* InboundServiceLocator.swift in Sources */,
 				A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */,
+				A8C6E5F727C24A7300E573AC /* NibReusable.swift in Sources */,
 				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
 				A8C6E5DF27C238AE00E573AC /* InboundProtocols.swift in Sources */,
+				A8C6E5F527C249A800E573AC /* FlightCellModel.swift in Sources */,
 				A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */,
 				A8C6E5E027C238AE00E573AC /* InboundInteractor.swift in Sources */,
 				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,

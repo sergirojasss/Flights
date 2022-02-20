@@ -29,7 +29,12 @@ extension InboundViewController {
         static let errorOK = "Ok"
         static let emptyString = ""
     }
+}
 
+enum InboundViewControllerListElements {
+    case shimmer
+    case flightCell(model: FlightCellModel)
+    case emptyCell(title: String)
 }
 
 final class InboundViewController: UIViewController {
@@ -43,7 +48,7 @@ final class InboundViewController: UIViewController {
     }()
     
     private lazy var dataSource: InboundViewDatasource = {
-        InboundViewDatasource(datasource: presenter.flights,
+        InboundViewDatasource(datasource: presenter.outbound,
                               tableView: tableView)
     }()
     
@@ -116,6 +121,7 @@ extension InboundViewController: InboundViewProtocol {
     }
     
     func reloadFlights() {
+        dataSource.datasource = presenter.outbound
         tableView.reloadData()
     }
 }

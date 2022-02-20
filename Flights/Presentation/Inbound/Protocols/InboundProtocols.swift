@@ -17,12 +17,13 @@ protocol InboundRouterProtocol {
 }
 
 protocol InboundInteractorProtocol {
-    func getFlights() -> Single<[FlightEntity]>
+    func getFlights() -> Single<(inbound: [FlightModel], outbound: [FlightModel])>
     func getAirlines() -> Single<[AirlineEntity]>
 }
 
 protocol InboundPresenterProtocol {
     func viewDidload()
-    var flights: [FlightModel] { get }
+    var outbound: [InboundViewControllerListElements] { get }
+    var inbound: [InboundViewControllerListElements] { get }
 }
 
