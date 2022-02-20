@@ -104,9 +104,8 @@ extension FlightCell {
         static let trailingWithContentView = 20.0
         static let spacingLabels = 5.0
         static let spacingCells = 5.0
-        static let totalHeight = 110.0
-        static let logoHeight = 100.0
-        static let logoWidth = 100.0
+        static let logoHeight = 50.0
+        static let logoWidth = 50.0
     }
 
     private func setupConstraints() {
@@ -116,16 +115,9 @@ extension FlightCell {
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constraints.leadingWithContentView),
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.trailingWithContentView),
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
-
-            airlineLogo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.spacingLabels),
-            airlineLogo.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
-            airlineLogo.widthAnchor.constraint(equalToConstant: Constraints.logoWidth),
-            airlineLogo.heightAnchor.constraint(equalToConstant: Constraints.logoHeight),
-            airlineLogo.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-
-            airline.topAnchor.constraint(equalTo: airlineLogo.topAnchor),
-            airline.leadingAnchor.constraint(equalTo: airlineLogo.trailingAnchor, constant: Constraints.leadingWithContentView),
-            airline.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.trailingWithContentView),
+            
+            airline.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.spacingLabels),
+            airline.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
             
             departure.topAnchor.constraint(equalTo: airline.bottomAnchor, constant: Constraints.spacingLabels),
             departure.leadingAnchor.constraint(equalTo: airline.leadingAnchor),
@@ -139,8 +131,14 @@ extension FlightCell {
             price.leadingAnchor.constraint(equalTo: airline.leadingAnchor),
             price.trailingAnchor.constraint(equalTo: airline.trailingAnchor),
             price.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor),
-
-            contentView.heightAnchor.constraint(equalToConstant: Constraints.totalHeight)
+            
+            airlineLogo.topAnchor.constraint(equalTo: airline.topAnchor),
+            airlineLogo.leadingAnchor.constraint(greaterThanOrEqualTo: airline.trailingAnchor),
+            airlineLogo.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.spacingCells),
+            airlineLogo.widthAnchor.constraint(equalToConstant: Constraints.logoWidth),
+            airlineLogo.heightAnchor.constraint(equalToConstant: Constraints.logoHeight),
+            
+            contentView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
 
