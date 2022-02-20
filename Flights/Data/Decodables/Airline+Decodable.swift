@@ -20,8 +20,8 @@ struct AirlinesResponse: Codable {
         case logoImg, mainImg
     }
     
-    func toDomain() -> Airline {
-        return Airline(id: id,
+    func toDomain() -> AirlineEntity {
+        return AirlineEntity(id: id,
                        name: name,
                        headline: headline,
                        airlineDescription: airlineDescription,

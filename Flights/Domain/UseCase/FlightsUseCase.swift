@@ -8,8 +8,12 @@
 import Foundation
 import RxSwift
 
+enum orderFlightsPrice {
+    case asc, desc
+}
+
 protocol FlightsUseCase {
-    func execute() -> Single<[Flight]>
+    func execute(orderBy: orderFlightsPrice) -> Single<[FlightEntity]>
 }
 
 final class DefaultFlightsUseCase: FlightsUseCase {
@@ -20,7 +24,10 @@ final class DefaultFlightsUseCase: FlightsUseCase {
         self.flightsListRepo = flightsListRepo
     }
     
-    func execute() -> Single<[Flight]> {
-        return flightsListRepo.flightsList().map{ $0.toDomain() }
+    func execute(orderBy: orderFlightsPrice) -> Single<[FlightEntity]> {
+        flightsListRepo.flightsList().map{ $0.sorted { lhs, rhs in
+            orderBy == .asc ? lhs.price > rhs.price : lhs.price < rhs.price
+        } }
     }
 }
+

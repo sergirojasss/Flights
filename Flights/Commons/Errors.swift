@@ -8,4 +8,5 @@
 enum ServiceError: Error {
     case responseError
     case mappingError
+    case decodingData
 }

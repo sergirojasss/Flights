@@ -10,7 +10,8 @@ import Alamofire
 import RxSwift
 
 final class DefaultFlightsRepository: FlightsRepository {
-    func flightsList() -> Single<FlightsListResponse> {
+    
+    func flightsList() -> Single<[FlightEntity]> {
         
         return Single.create { single -> Disposable in
             //TODO: Magic numbers
@@ -23,9 +24,24 @@ final class DefaultFlightsRepository: FlightsRepository {
                         single(.failure(ServiceError.mappingError))
                         return
                     }
-                    single(.success(response))
+                    RealmManager.removeFlights()
+                    for inbound in response.inboundFlights {
+                        RealmManager.addNew(model: FlightsRealm(from: inbound.toDomain(type: FlightType.inbound)))
+                    }
+                    for outbound in response.outboundFlights {
+                        RealmManager.addNew(model: FlightsRealm(from: outbound.toDomain(type: FlightType.outbound)))
+                    }
+                    
+                    single(.success(response.toDomain()))
                 default:
-                    single(.failure(ServiceError.responseError))
+                    RealmManager.retrieveFlights() { result in
+                        switch result {
+                        case .success(let flights):
+                            single(.success(flights))
+                        case .failure(let error):
+                            single(.failure(error))
+                        }
+                    }
                 }
             }
             return Disposables.create()

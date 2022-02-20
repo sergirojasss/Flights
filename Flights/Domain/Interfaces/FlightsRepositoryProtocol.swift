@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol FlightsRepository {
-    func flightsList() -> Single<FlightsListResponse>
+    func flightsList() -> Single<[FlightEntity]>
 }

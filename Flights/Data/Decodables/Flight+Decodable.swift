@@ -11,10 +11,10 @@ import Foundation
 struct FlightsListResponse: Codable {
     let outboundFlights, inboundFlights: [FlightResponse]
     
-    func toDomain() -> [Flight] {
-        var flights: [Flight] = []
+    func toDomain() -> [FlightEntity] {
+        var flights: [FlightEntity] = []
+        flights.append(contentsOf: inboundFlights.map { $0.toDomain(type: .inbound) })
         flights.append(contentsOf: outboundFlights.map { $0.toDomain(type: .outbound) })
-        flights.append(contentsOf: outboundFlights.map { $0.toDomain(type: .inbound) })
         return flights
     }
 }
@@ -24,10 +24,10 @@ struct FlightResponse: Codable {
     let id: Int
     let airline: String
     let departureAirportCode, arrivalAirportCode: String
-    let price: Int
+    let price: Float
     
-    func toDomain(type: FlightType) -> Flight {
-        return Flight(id: id,
+    func toDomain(type: FlightType) -> FlightEntity {
+        return FlightEntity(id: id,
                       airline: airline,
                       departureAirportCode: departureAirportCode,
                       arrivalAirportCode: arrivalAirportCode,

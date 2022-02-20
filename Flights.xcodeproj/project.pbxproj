@@ -26,25 +26,24 @@
 		A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57D27C103A100E573AC /* FlightsRepositoryProtocol.swift */; };
 		A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */; };
 		A8C6E58327C1071300E573AC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58227C1071300E573AC /* Errors.swift */; };
-		A8C6E58527C1080000E573AC /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58427C1080000E573AC /* Flight.swift */; };
-		A8C6E58727C1080900E573AC /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58627C1080900E573AC /* Airline.swift */; };
+		A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58427C1080000E573AC /* FlightEntity.swift */; };
+		A8C6E58727C1080900E573AC /* AirlineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58627C1080900E573AC /* AirlineEntity.swift */; };
 		A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */; };
 		A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */; };
-		A8C6E59727C1468C00E573AC /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59627C1468C00E573AC /* TabRouter.swift */; };
-		A8C6E59927C1469400E573AC /* TabInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59827C1469400E573AC /* TabInteractor.swift */; };
-		A8C6E59B27C146A100E573AC /* TabProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59A27C146A100E573AC /* TabProtocols.swift */; };
-		A8C6E59D27C146AA00E573AC /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59C27C146AA00E573AC /* TabViewController.swift */; };
-		A8C6E59F27C146B300E573AC /* TabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E59E27C146B300E573AC /* TabPresenter.swift */; };
-		A8C6E5AA27C14B0800E573AC /* InboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */; };
-		A8C6E5AB27C14B0800E573AC /* InboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */; };
-		A8C6E5AC27C14B0800E573AC /* InboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */; };
-		A8C6E5AD27C14B0800E573AC /* InboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A727C14B0800E573AC /* InboundRouter.swift */; };
-		A8C6E5AE27C14B0800E573AC /* InboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5A927C14B0800E573AC /* InboundViewController.swift */; };
-		A8C6E5B927C14C0800E573AC /* OutboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */; };
-		A8C6E5BA27C14C0800E573AC /* OutboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */; };
-		A8C6E5BB27C14C0800E573AC /* OutboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */; };
-		A8C6E5BC27C14C0800E573AC /* OutboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */; };
-		A8C6E5BD27C14C0800E573AC /* OutboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */; };
+		A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5C827C1B50300E573AC /* RealmManager.swift */; };
+		A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */; };
+		A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */; };
+		A8C6E5DD27C238AE00E573AC /* InboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */; };
+		A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D627C238AE00E573AC /* InboundViewController.swift */; };
+		A8C6E5DF27C238AE00E573AC /* InboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */; };
+		A8C6E5E027C238AE00E573AC /* InboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */; };
+		A8C6E5E127C238AE00E573AC /* InboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */; };
+		A8C6E5E427C238ED00E573AC /* InboundServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */; };
+		A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E627C23AB500E573AC /* AirlineModel.swift */; };
+		A8C6E5E927C23AC300E573AC /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E827C23AC300E573AC /* FlightModel.swift */; };
+		A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */; };
+		A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */; };
+		A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,25 +91,24 @@
 		A8C6E57D27C103A100E573AC /* FlightsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A8C6E57F27C103AF00E573AC /* AirlinesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A8C6E58227C1071300E573AC /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		A8C6E58427C1080000E573AC /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
-		A8C6E58627C1080900E573AC /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		A8C6E58427C1080000E573AC /* FlightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightEntity.swift; sourceTree = "<group>"; };
+		A8C6E58627C1080900E573AC /* AirlineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineEntity.swift; sourceTree = "<group>"; };
 		A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUseCase.swift; sourceTree = "<group>"; };
 		A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUseCase.swift; sourceTree = "<group>"; };
-		A8C6E59627C1468C00E573AC /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
-		A8C6E59827C1469400E573AC /* TabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInteractor.swift; sourceTree = "<group>"; };
-		A8C6E59A27C146A100E573AC /* TabProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabProtocols.swift; sourceTree = "<group>"; };
-		A8C6E59C27C146AA00E573AC /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		A8C6E59E27C146B300E573AC /* TabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPresenter.swift; sourceTree = "<group>"; };
-		A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundInteractor.swift; sourceTree = "<group>"; };
-		A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundProtocols.swift; sourceTree = "<group>"; };
-		A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundPresenter.swift; sourceTree = "<group>"; };
-		A8C6E5A727C14B0800E573AC /* InboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundRouter.swift; sourceTree = "<group>"; };
-		A8C6E5A927C14B0800E573AC /* InboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundViewController.swift; sourceTree = "<group>"; };
-		A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundRouter.swift; sourceTree = "<group>"; };
-		A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundViewController.swift; sourceTree = "<group>"; };
-		A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundPresenter.swift; sourceTree = "<group>"; };
-		A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundInteractor.swift; sourceTree = "<group>"; };
-		A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundProtocols.swift; sourceTree = "<group>"; };
+		A8C6E5C827C1B50300E573AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRealm.swift; sourceTree = "<group>"; };
+		A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRealm.swift; sourceTree = "<group>"; };
+		A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundPresenter.swift; sourceTree = "<group>"; };
+		A8C6E5D627C238AE00E573AC /* InboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundViewController.swift; sourceTree = "<group>"; };
+		A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundProtocols.swift; sourceTree = "<group>"; };
+		A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundInteractor.swift; sourceTree = "<group>"; };
+		A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundRouter.swift; sourceTree = "<group>"; };
+		A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundServiceLocator.swift; sourceTree = "<group>"; };
+		A8C6E5E627C23AB500E573AC /* AirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineModel.swift; sourceTree = "<group>"; };
+		A8C6E5E827C23AC300E573AC /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportProtocol.swift; sourceTree = "<group>"; };
+		A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDelegate.swift; sourceTree = "<group>"; };
+		A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDatasource.swift; sourceTree = "<group>"; };
 		C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F894391C4A99A619C497FCDF /* Pods-Flights-FlightsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights-FlightsUITests.release.xcconfig"; path = "Target Support Files/Pods-Flights-FlightsUITests/Pods-Flights-FlightsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +209,7 @@
 		A8C6E56E27C102D600E573AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A8C6E5C727C1B4F200E573AC /* Persistency */,
 				A8C6E57527C1032900E573AC /* Decodables */,
 				A8C6E57127C1030A00E573AC /* FlightsRepository.swift */,
 				A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */,
@@ -231,9 +230,8 @@
 		A8C6E57027C102E600E573AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E58E27C145F400E573AC /* TabController */,
-				A8C6E58D27C145E300E573AC /* Inbound */,
-				A8C6E58C27C145E000E573AC /* Outbound */,
+				A8C6E5E527C23AAA00E573AC /* Models */,
+				A8C6E5D227C238AE00E573AC /* Inbound */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -259,8 +257,8 @@
 		A8C6E57B27C1036C00E573AC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E58427C1080000E573AC /* Flight.swift */,
-				A8C6E58627C1080900E573AC /* Airline.swift */,
+				A8C6E58427C1080000E573AC /* FlightEntity.swift */,
+				A8C6E58627C1080900E573AC /* AirlineEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -274,160 +272,96 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
-		A8C6E58C27C145E000E573AC /* Outbound */ = {
+		A8C6E5C727C1B4F200E573AC /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5B527C14C0800E573AC /* Interactor */,
-				A8C6E5B327C14C0800E573AC /* Presenter */,
-				A8C6E5B727C14C0800E573AC /* Protocols */,
-				A8C6E5AF27C14C0800E573AC /* Router */,
-				A8C6E5B127C14C0800E573AC /* View */,
+				A8C6E5C827C1B50300E573AC /* RealmManager.swift */,
+				A8C6E5CA27C1B56400E573AC /* Models */,
 			);
-			path = Outbound;
+			path = Persistency;
 			sourceTree = "<group>";
 		};
-		A8C6E58D27C145E300E573AC /* Inbound */ = {
+		A8C6E5CA27C1B56400E573AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5A027C14B0800E573AC /* Interactor */,
-				A8C6E5A427C14B0800E573AC /* Presenter */,
-				A8C6E5A227C14B0800E573AC /* Protocols */,
-				A8C6E5A627C14B0800E573AC /* Router */,
-				A8C6E5A827C14B0800E573AC /* View */,
+				A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */,
+				A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */,
 			);
-			path = Inbound;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		A8C6E58E27C145F400E573AC /* TabController */ = {
+		A8C6E5D227C238AE00E573AC /* Inbound */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59527C1466D00E573AC /* Router */,
-				A8C6E59427C1466800E573AC /* Interactor */,
-				A8C6E59327C1465F00E573AC /* Protocols */,
-				A8C6E59227C1465900E573AC /* View */,
-				A8C6E59127C1465100E573AC /* Presenter */,
+				A8C6E5E227C238D500E573AC /* ServiceLocator */,
+				A8C6E5D327C238AE00E573AC /* Presenter */,
+				A8C6E5D527C238AE00E573AC /* View */,
+				A8C6E5D727C238AE00E573AC /* Protocols */,
+				A8C6E5D927C238AE00E573AC /* Interactor */,
+				A8C6E5DB27C238AE00E573AC /* Router */,
 			);
-			path = TabController;
-			sourceTree = "<group>";
+			name = Inbound;
+			path = Flights/Presentation/Inbound;
+			sourceTree = SOURCE_ROOT;
 		};
-		A8C6E59127C1465100E573AC /* Presenter */ = {
+		A8C6E5D327C238AE00E573AC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59E27C146B300E573AC /* TabPresenter.swift */,
+				A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		A8C6E59227C1465900E573AC /* View */ = {
+		A8C6E5D527C238AE00E573AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59C27C146AA00E573AC /* TabViewController.swift */,
+				A8C6E5D627C238AE00E573AC /* InboundViewController.swift */,
+				A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */,
+				A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A8C6E59327C1465F00E573AC /* Protocols */ = {
+		A8C6E5D727C238AE00E573AC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59A27C146A100E573AC /* TabProtocols.swift */,
+				A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		A8C6E59427C1466800E573AC /* Interactor */ = {
+		A8C6E5D927C238AE00E573AC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59827C1469400E573AC /* TabInteractor.swift */,
+				A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		A8C6E59527C1466D00E573AC /* Router */ = {
+		A8C6E5DB27C238AE00E573AC /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E59627C1468C00E573AC /* TabRouter.swift */,
+				A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		A8C6E5A027C14B0800E573AC /* Interactor */ = {
+		A8C6E5E227C238D500E573AC /* ServiceLocator */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5A127C14B0800E573AC /* InboundInteractor.swift */,
+				A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */,
 			);
-			path = Interactor;
+			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
-		A8C6E5A227C14B0800E573AC /* Protocols */ = {
+		A8C6E5E527C23AAA00E573AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5A327C14B0800E573AC /* InboundProtocols.swift */,
+				A8C6E5E627C23AB500E573AC /* AirlineModel.swift */,
+				A8C6E5E827C23AC300E573AC /* FlightModel.swift */,
+				A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */,
 			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		A8C6E5A427C14B0800E573AC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5A527C14B0800E573AC /* InboundPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A8C6E5A627C14B0800E573AC /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5A727C14B0800E573AC /* InboundRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A8C6E5A827C14B0800E573AC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5A927C14B0800E573AC /* InboundViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A8C6E5AF27C14C0800E573AC /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5B027C14C0800E573AC /* OutboundRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A8C6E5B127C14C0800E573AC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5B227C14C0800E573AC /* OutboundViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A8C6E5B327C14C0800E573AC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5B427C14C0800E573AC /* OutboundPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A8C6E5B527C14C0800E573AC /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5B627C14C0800E573AC /* OutboundInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		A8C6E5B727C14C0800E573AC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				A8C6E5B827C14C0800E573AC /* OutboundProtocols.swift */,
-			);
-			path = Protocols;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AC17DE8F22C917F7066151F0 /* Pods */ = {
@@ -691,36 +625,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C6E5E127C238AE00E573AC /* InboundRouter.swift in Sources */,
 				A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */,
 				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
-				A8C6E5AD27C14B0800E573AC /* InboundRouter.swift in Sources */,
-				A8C6E59B27C146A100E573AC /* TabProtocols.swift in Sources */,
-				A8C6E5B927C14C0800E573AC /* OutboundRouter.swift in Sources */,
 				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,
 				A8C6E56B27C102AB00E573AC /* Box.swift in Sources */,
+				A8C6E5DD27C238AE00E573AC /* InboundPresenter.swift in Sources */,
 				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
-				A8C6E5BA27C14C0800E573AC /* OutboundViewController.swift in Sources */,
-				A8C6E5BD27C14C0800E573AC /* OutboundProtocols.swift in Sources */,
 				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
-				A8C6E5AE27C14B0800E573AC /* InboundViewController.swift in Sources */,
-				A8C6E59D27C146AA00E573AC /* TabViewController.swift in Sources */,
-				A8C6E5BB27C14C0800E573AC /* OutboundPresenter.swift in Sources */,
-				A8C6E58727C1080900E573AC /* Airline.swift in Sources */,
+				A8C6E58727C1080900E573AC /* AirlineEntity.swift in Sources */,
 				A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */,
-				A8C6E59727C1468C00E573AC /* TabRouter.swift in Sources */,
+				A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */,
 				A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */,
+				A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */,
 				A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */,
-				A8C6E5AA27C14B0800E573AC /* InboundInteractor.swift in Sources */,
+				A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */,
+				A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */,
+				A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */,
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
-				A8C6E5AB27C14B0800E573AC /* InboundProtocols.swift in Sources */,
+				A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */,
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
-				A8C6E59F27C146B300E573AC /* TabPresenter.swift in Sources */,
+				A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */,
+				A8C6E5E427C238ED00E573AC /* InboundServiceLocator.swift in Sources */,
+				A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */,
 				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
-				A8C6E5BC27C14C0800E573AC /* OutboundInteractor.swift in Sources */,
-				A8C6E58527C1080000E573AC /* Flight.swift in Sources */,
-				A8C6E5AC27C14B0800E573AC /* InboundPresenter.swift in Sources */,
-				A8C6E59927C1469400E573AC /* TabInteractor.swift in Sources */,
+				A8C6E5DF27C238AE00E573AC /* InboundProtocols.swift in Sources */,
+				A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */,
+				A8C6E5E027C238AE00E573AC /* InboundInteractor.swift in Sources */,
 				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,
+				A8C6E5E927C23AC300E573AC /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +825,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -920,6 +854,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flights/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

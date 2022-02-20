@@ -8,6 +8,8 @@ target 'Flights' do
   # Pods for Flights
   pod 'RxSwift', '6.2.0'
   pod 'Alamofire', '5.5.0'
+  pod 'RealmSwift', '~>10'
+
 
   target 'FlightsTests' do
     inherit! :search_paths

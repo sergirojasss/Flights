@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol AirlinesUseCase {
-    func execute() -> Single<[Airline]>
+    func execute() -> Single<[AirlineEntity]>
 }
 
 final class DefaultAirlinesUseCase: AirlinesUseCase {
@@ -20,9 +20,7 @@ final class DefaultAirlinesUseCase: AirlinesUseCase {
         self.airlinesListRepo = airlinesListRepo
     }
     
-    func execute() -> Single<[Airline]> {
-        return airlinesListRepo.airlinesList().flatMap { response in
-            return .just(response.map { $0.toDomain() })
-        }
+    func execute() -> Single<[AirlineEntity]> {
+        return airlinesListRepo.airlinesList()
     }
 }

@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 final class DefaultAirlinesRepository: AirlinesRepository {
-    func airlinesList() -> Single<[AirlinesResponse]> {
+    func airlinesList() -> Single<[AirlineEntity]> {
         
         return Single.create { single -> Disposable in
             //TODO: Magic numbers
@@ -23,9 +23,20 @@ final class DefaultAirlinesRepository: AirlinesRepository {
                         single(.failure(ServiceError.mappingError))
                         return
                     }
-                    single(.success(response))
+                    RealmManager.removeAirlines()
+                    for airline in response {
+                        RealmManager.addNew(model: AirlinesRealm.init(from: airline.toDomain()))
+                    }
+                    single(.success(response.map{$0.toDomain()}))
                 default:
-                    single(.failure(ServiceError.responseError))
+                    RealmManager.retrieveAirlines() { result in
+                        switch result {
+                        case .success(let airlines):
+                            single(.success(airlines))
+                        case .failure(let error):
+                            single(.failure(error))
+                        }
+                    }
                 }
             }
             return Disposables.create()

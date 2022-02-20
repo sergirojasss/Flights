@@ -14,10 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = TabViewController()
-        self.window = window
+
+        let viewController = InboundServiceLocator.provideViewController()
+        let navigation = UINavigationController(rootViewController: viewController)
+
+        window.rootViewController = navigation
         window.makeKeyAndVisible()
+
+        self.window = window
     }
 }
