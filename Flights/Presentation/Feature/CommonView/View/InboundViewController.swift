@@ -31,16 +31,10 @@ extension InboundViewController {
     }
 }
 
-enum InboundViewControllerListElements {
-    case shimmer
-    case flightCell(model: FlightCellModel)
-    case emptyCell(title: String)
-}
-
 final class InboundViewController: UIViewController {
-    var presenter: InboundPresenterProtocol!
+    var presenter: OutboundPresenterProtocol?
+    var inboundPresenter: InboundPresenterProtocol?
     var viewType: ViewType!
-    var selectedOutBoundId: Int?
 
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -50,7 +44,7 @@ final class InboundViewController: UIViewController {
     }()
     
     private lazy var dataSource: InboundViewDatasource = {
-        InboundViewDatasource(datasource: presenter.outbound,
+        InboundViewDatasource(datasource: presenter?.outbound,
                               tableView: tableView)
     }()
     
@@ -67,7 +61,8 @@ final class InboundViewController: UIViewController {
         setupView()
         configureTableView()
         
-        presenter.viewDidload()
+        presenter?.viewDidload()
+        inboundPresenter?.viewDidload()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,9 +107,6 @@ final class InboundViewController: UIViewController {
 }
 
 extension InboundViewController: InboundViewProtocol {
-    func goToInboundFlights(outboundId: Int) {
-        presenter.goToInboundFlights(outboundId: outboundId)
-    }
     
         func showError(_ error: ServiceError) {
         let alertView = UIAlertController(title: Strings.errorTitle, message: Strings.errorDescription, preferredStyle: .alert)
@@ -127,7 +119,11 @@ extension InboundViewController: InboundViewProtocol {
     }
     
     func reloadFlights() {
-        dataSource.datasource = presenter.outbound
+        if viewType == .outbound {
+            dataSource.datasource = presenter?.outbound
+        } else {
+            dataSource.datasource = inboundPresenter?.inbound.map{ CellTypes.flightCell(model: FlightCellModel(from: $0)) }
+        }
         tableView.reloadData()
     }
 }

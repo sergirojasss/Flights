@@ -72,6 +72,7 @@ extension FlightCell {
     }
 
     func configure(model: FlightCellModel) {
+        self.model = model
         airline.text = model.airline
         departure.text = model.departure
         arrival.text = model.arrival

@@ -25,8 +25,10 @@ final class InboundViewDelegate: NSObject, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //TODO: set interaction
-        if let cell = tableView.cellForRow(at: indexPath) as? FlightCell {
-            view?.goToInboundFlights(outboundId: cell.getId())
+        if view?.viewType == .outbound {
+            if let cell = tableView.cellForRow(at: indexPath) as? FlightCell {
+                view?.presenter?.goToInboundFlights(outboundModelId: cell.getId())
+            }
         }
     }
 }

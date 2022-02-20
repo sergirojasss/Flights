@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 final class InboundViewDatasource: NSObject, UITableViewDataSource {
-    var datasource: [InboundViewControllerListElements]?
+    var datasource: [CellTypes]?
     private var tableView: UITableView?
 
-    init(datasource: [InboundViewControllerListElements]?,
+    init(datasource: [CellTypes]?,
          tableView: UITableView)
     {
         self.datasource = datasource

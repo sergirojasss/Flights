@@ -10,6 +10,13 @@
 		0410D5BE61DE2150667AEDBE /* Pods_Flights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05DA2F08F03148AB1C34B3A /* Pods_Flights.framework */; };
 		15BD69D1EF78E0AD21FBFBEC /* Pods_FlightsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9A40C15C1F77CE2B07CE0B /* Pods_FlightsTests.framework */; };
 		79F5FD4C17B1109F9AAFCD3A /* Pods_Flights_FlightsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588B84CE100CF7AAD913FFEE /* Pods_Flights_FlightsUITests.framework */; };
+		A8356A0927C271E5007C3D96 /* InboundServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A0827C271E5007C3D96 /* InboundServiceLocator.swift */; };
+		A8356A0B27C271EC007C3D96 /* InboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A0A27C271EC007C3D96 /* InboundPresenter.swift */; };
+		A8356A0D27C271F7007C3D96 /* InboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A0C27C271F7007C3D96 /* InboundProtocols.swift */; };
+		A8356A0F27C27200007C3D96 /* InboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A0E27C27200007C3D96 /* InboundInteractor.swift */; };
+		A8356A1127C27207007C3D96 /* InboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A1027C27207007C3D96 /* InboundRouter.swift */; };
+		A8356A1427C27259007C3D96 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A1327C27259007C3D96 /* ViewType.swift */; };
+		A8356A1627C27523007C3D96 /* CellTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A1527C27523007C3D96 /* CellTypes.swift */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
@@ -33,12 +40,12 @@
 		A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5C827C1B50300E573AC /* RealmManager.swift */; };
 		A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */; };
 		A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */; };
-		A8C6E5DD27C238AE00E573AC /* InboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */; };
+		A8C6E5DD27C238AE00E573AC /* OutboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D427C238AE00E573AC /* OutboundPresenter.swift */; };
 		A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D627C238AE00E573AC /* InboundViewController.swift */; };
-		A8C6E5DF27C238AE00E573AC /* InboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */; };
-		A8C6E5E027C238AE00E573AC /* InboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */; };
-		A8C6E5E127C238AE00E573AC /* InboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */; };
-		A8C6E5E427C238ED00E573AC /* InboundServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */; };
+		A8C6E5DF27C238AE00E573AC /* OutboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D827C238AE00E573AC /* OutboundProtocols.swift */; };
+		A8C6E5E027C238AE00E573AC /* OutboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DA27C238AE00E573AC /* OutboundInteractor.swift */; };
+		A8C6E5E127C238AE00E573AC /* OutboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DC27C238AE00E573AC /* OutboundRouter.swift */; };
+		A8C6E5E427C238ED00E573AC /* OutboundServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E327C238ED00E573AC /* OutboundServiceLocator.swift */; };
 		A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E627C23AB500E573AC /* AirlineModel.swift */; };
 		A8C6E5E927C23AC300E573AC /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E827C23AC300E573AC /* FlightModel.swift */; };
 		A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */; };
@@ -74,6 +81,13 @@
 		6A9A40C15C1F77CE2B07CE0B /* Pods_FlightsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEF99012B613CF1C460E24D /* Pods-Flights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flights.debug.xcconfig"; path = "Target Support Files/Pods-Flights/Pods-Flights.debug.xcconfig"; sourceTree = "<group>"; };
 		82DBA47469D276C71F58FAA9 /* Pods-FlightsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightsTests.debug.xcconfig"; path = "Target Support Files/Pods-FlightsTests/Pods-FlightsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8356A0827C271E5007C3D96 /* InboundServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundServiceLocator.swift; sourceTree = "<group>"; };
+		A8356A0A27C271EC007C3D96 /* InboundPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundPresenter.swift; sourceTree = "<group>"; };
+		A8356A0C27C271F7007C3D96 /* InboundProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundProtocols.swift; sourceTree = "<group>"; };
+		A8356A0E27C27200007C3D96 /* InboundInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundInteractor.swift; sourceTree = "<group>"; };
+		A8356A1027C27207007C3D96 /* InboundRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundRouter.swift; sourceTree = "<group>"; };
+		A8356A1327C27259007C3D96 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		A8356A1527C27523007C3D96 /* CellTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypes.swift; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,12 +115,12 @@
 		A8C6E5C827C1B50300E573AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRealm.swift; sourceTree = "<group>"; };
 		A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRealm.swift; sourceTree = "<group>"; };
-		A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundPresenter.swift; sourceTree = "<group>"; };
+		A8C6E5D427C238AE00E573AC /* OutboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundPresenter.swift; sourceTree = "<group>"; };
 		A8C6E5D627C238AE00E573AC /* InboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundViewController.swift; sourceTree = "<group>"; };
-		A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundProtocols.swift; sourceTree = "<group>"; };
-		A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundInteractor.swift; sourceTree = "<group>"; };
-		A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundRouter.swift; sourceTree = "<group>"; };
-		A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundServiceLocator.swift; sourceTree = "<group>"; };
+		A8C6E5D827C238AE00E573AC /* OutboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundProtocols.swift; sourceTree = "<group>"; };
+		A8C6E5DA27C238AE00E573AC /* OutboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundInteractor.swift; sourceTree = "<group>"; };
+		A8C6E5DC27C238AE00E573AC /* OutboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundRouter.swift; sourceTree = "<group>"; };
+		A8C6E5E327C238ED00E573AC /* OutboundServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundServiceLocator.swift; sourceTree = "<group>"; };
 		A8C6E5E627C23AB500E573AC /* AirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineModel.swift; sourceTree = "<group>"; };
 		A8C6E5E827C23AC300E573AC /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportProtocol.swift; sourceTree = "<group>"; };
@@ -147,6 +161,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8356A0027C2716D007C3D96 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5E527C23AAA00E573AC /* Models */,
+				A8356A0227C2718B007C3D96 /* CommonView */,
+				A8356A0127C27175007C3D96 /* Inbound */,
+				A8C6E5D227C238AE00E573AC /* Outbound */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A8356A0127C27175007C3D96 /* Inbound */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A0727C271B4007C3D96 /* ServiceLocator */,
+				A8356A0627C271B1007C3D96 /* Presenter */,
+				A8356A0527C271AF007C3D96 /* Protocols */,
+				A8356A0427C271AC007C3D96 /* Interactor */,
+				A8356A0327C271AA007C3D96 /* Router */,
+			);
+			path = Inbound;
+			sourceTree = "<group>";
+		};
+		A8356A0227C2718B007C3D96 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				A8C6E5D527C238AE00E573AC /* View */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		A8356A0327C271AA007C3D96 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A1027C27207007C3D96 /* InboundRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A8356A0427C271AC007C3D96 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A0E27C27200007C3D96 /* InboundInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A8356A0527C271AF007C3D96 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A0C27C271F7007C3D96 /* InboundProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A8356A0627C271B1007C3D96 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A0A27C271EC007C3D96 /* InboundPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A8356A0727C271B4007C3D96 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A0827C271E5007C3D96 /* InboundServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
 		A8C6E52D27C1019700E573AC = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +322,8 @@
 		A8C6E57027C102E600E573AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A8356A0027C2716D007C3D96 /* Feature */,
 				A8C6E5F027C2498400E573AC /* Cells */,
-				A8C6E5E527C23AAA00E573AC /* Models */,
-				A8C6E5D227C238AE00E573AC /* Inbound */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -298,24 +382,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A8C6E5D227C238AE00E573AC /* Inbound */ = {
+		A8C6E5D227C238AE00E573AC /* Outbound */ = {
 			isa = PBXGroup;
 			children = (
 				A8C6E5E227C238D500E573AC /* ServiceLocator */,
 				A8C6E5D327C238AE00E573AC /* Presenter */,
-				A8C6E5D527C238AE00E573AC /* View */,
 				A8C6E5D727C238AE00E573AC /* Protocols */,
 				A8C6E5D927C238AE00E573AC /* Interactor */,
 				A8C6E5DB27C238AE00E573AC /* Router */,
 			);
-			name = Inbound;
-			path = Flights/Presentation/Inbound;
+			name = Outbound;
+			path = Flights/Presentation/Feature/Outbound;
 			sourceTree = SOURCE_ROOT;
 		};
 		A8C6E5D327C238AE00E573AC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5D427C238AE00E573AC /* InboundPresenter.swift */,
+				A8C6E5D427C238AE00E573AC /* OutboundPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -333,7 +416,7 @@
 		A8C6E5D727C238AE00E573AC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5D827C238AE00E573AC /* InboundProtocols.swift */,
+				A8C6E5D827C238AE00E573AC /* OutboundProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -341,7 +424,7 @@
 		A8C6E5D927C238AE00E573AC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5DA27C238AE00E573AC /* InboundInteractor.swift */,
+				A8C6E5DA27C238AE00E573AC /* OutboundInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -349,7 +432,7 @@
 		A8C6E5DB27C238AE00E573AC /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5DC27C238AE00E573AC /* InboundRouter.swift */,
+				A8C6E5DC27C238AE00E573AC /* OutboundRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -357,7 +440,7 @@
 		A8C6E5E227C238D500E573AC /* ServiceLocator */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5E327C238ED00E573AC /* InboundServiceLocator.swift */,
+				A8C6E5E327C238ED00E573AC /* OutboundServiceLocator.swift */,
 			);
 			path = ServiceLocator;
 			sourceTree = "<group>";
@@ -365,6 +448,8 @@
 		A8C6E5E527C23AAA00E573AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8356A1327C27259007C3D96 /* ViewType.swift */,
+				A8356A1527C27523007C3D96 /* CellTypes.swift */,
 				A8C6E5E627C23AB500E573AC /* AirlineModel.swift */,
 				A8C6E5E827C23AC300E573AC /* FlightModel.swift */,
 				A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */,
@@ -650,16 +735,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8C6E5E127C238AE00E573AC /* InboundRouter.swift in Sources */,
+				A8C6E5E127C238AE00E573AC /* OutboundRouter.swift in Sources */,
 				A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */,
+				A8356A0F27C27200007C3D96 /* InboundInteractor.swift in Sources */,
 				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
 				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,
 				A8C6E56B27C102AB00E573AC /* Box.swift in Sources */,
-				A8C6E5DD27C238AE00E573AC /* InboundPresenter.swift in Sources */,
+				A8C6E5DD27C238AE00E573AC /* OutboundPresenter.swift in Sources */,
 				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
 				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
 				A8C6E58727C1080900E573AC /* AirlineEntity.swift in Sources */,
 				A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */,
+				A8356A0D27C271F7007C3D96 /* InboundProtocols.swift in Sources */,
+				A8356A1127C27207007C3D96 /* InboundRouter.swift in Sources */,
 				A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */,
 				A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */,
 				A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */,
@@ -670,17 +758,21 @@
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
 				A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */,
 				A8C6E5F227C2499200E573AC /* FlightCell.swift in Sources */,
+				A8356A0927C271E5007C3D96 /* InboundServiceLocator.swift in Sources */,
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
 				A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */,
-				A8C6E5E427C238ED00E573AC /* InboundServiceLocator.swift in Sources */,
+				A8C6E5E427C238ED00E573AC /* OutboundServiceLocator.swift in Sources */,
 				A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */,
 				A8C6E5F727C24A7300E573AC /* NibReusable.swift in Sources */,
 				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
-				A8C6E5DF27C238AE00E573AC /* InboundProtocols.swift in Sources */,
+				A8356A1427C27259007C3D96 /* ViewType.swift in Sources */,
+				A8C6E5DF27C238AE00E573AC /* OutboundProtocols.swift in Sources */,
 				A8C6E5F527C249A800E573AC /* FlightCellModel.swift in Sources */,
 				A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */,
-				A8C6E5E027C238AE00E573AC /* InboundInteractor.swift in Sources */,
+				A8C6E5E027C238AE00E573AC /* OutboundInteractor.swift in Sources */,
 				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,
+				A8356A1627C27523007C3D96 /* CellTypes.swift in Sources */,
+				A8356A0B27C271EC007C3D96 /* InboundPresenter.swift in Sources */,
 				A8C6E5E927C23AC300E573AC /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
