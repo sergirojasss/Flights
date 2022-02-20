@@ -26,7 +26,7 @@ final class DefaultFlightsUseCase: FlightsUseCase {
     
     func execute(orderBy: orderFlightsPrice) -> Single<[FlightEntity]> {
         flightsListRepo.flightsList().map{ $0.sorted { lhs, rhs in
-            orderBy == .asc ? lhs.price > rhs.price : lhs.price < rhs.price
+            orderBy == .asc ? lhs.price < rhs.price : lhs.price > rhs.price
         } }
     }
 }

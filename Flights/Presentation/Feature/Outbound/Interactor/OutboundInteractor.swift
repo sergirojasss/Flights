@@ -37,7 +37,13 @@ extension OutboundInteractor: OutboundInteractorProtocol {
             return (inbound, outbound)
         }
     }
-    func getAirlines() -> Single<[AirlineEntity]> {
-        dependencies.airlinesUseCase.execute()
+    func getAirlines() -> Single<[AirlineModel]?> {
+        dependencies.airlinesUseCase.execute().map { result -> [AirlineModel] in
+            var airlines: [AirlineModel] = []
+            for airline in result ?? [] {
+                airlines.append(airline.toModel())
+            }
+            return airlines
+        }
     }
 }

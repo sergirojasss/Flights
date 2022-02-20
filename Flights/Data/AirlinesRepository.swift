@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 final class DefaultAirlinesRepository: AirlinesRepository {
-    func airlinesList() -> Single<[AirlineEntity]> {
+    func airlines() -> Single<[AirlineEntity]?> {
         
         return Single.create { single -> Disposable in
             //TODO: Magic numbers

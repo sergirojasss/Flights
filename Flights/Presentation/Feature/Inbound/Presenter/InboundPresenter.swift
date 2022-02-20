@@ -20,6 +20,9 @@ final class InboundPresenter {
             view.reloadFlights()
         }
     }
+    var airlines: [AirlineModel]? {
+        interactor.airlines
+    }
 
     
     init(withView view: InboundViewProtocol, interactor: InboundInteractorProtocol, router: InboundRouterProtocol) {
@@ -32,5 +35,9 @@ final class InboundPresenter {
 extension InboundPresenter: InboundPresenterProtocol {
     func viewDidload() {
         inbound = interactor.getMatchingFlights()
+    }
+    
+    func getAirline(for name: String) -> AirlineModel? {
+        airlines?.first { airlineModel in airlineModel.id == name }
     }
 }

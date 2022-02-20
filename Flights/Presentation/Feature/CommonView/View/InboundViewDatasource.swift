@@ -9,13 +9,15 @@ import Foundation
 import UIKit
 
 final class InboundViewDatasource: NSObject, UITableViewDataSource {
-    var datasource: [CellTypes]?
+    var datasource: [CellTypes]? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     private var tableView: UITableView?
 
-    init(datasource: [CellTypes]?,
-         tableView: UITableView)
+    init(tableView: UITableView)
     {
-        self.datasource = datasource
         self.tableView = tableView
     }
 

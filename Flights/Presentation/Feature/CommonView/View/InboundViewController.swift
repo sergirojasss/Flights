@@ -23,7 +23,8 @@ extension InboundViewController {
     }
 
     private enum Strings {
-        static let title = "OutboundFlights"
+        static let outboundTitle = "Outbound"
+        static let inboundTtitle = "Inbound"
         static let errorTitle = "Error"
         static let errorDescription = "Ha ocurrido un error"
         static let errorOK = "Ok"
@@ -44,8 +45,7 @@ final class InboundViewController: UIViewController {
     }()
     
     private lazy var dataSource: InboundViewDatasource = {
-        InboundViewDatasource(datasource: presenter?.outbound,
-                              tableView: tableView)
+        InboundViewDatasource(tableView: tableView)
     }()
     
     private lazy var delegate: InboundViewDelegate = {
@@ -92,7 +92,7 @@ final class InboundViewController: UIViewController {
     // MARK: - Setup navigationBar methods
 
     func setupTitleNavBar() {
-        navigationItem.title = Strings.title
+        navigationItem.title = viewType == .inbound ? Strings.inboundTtitle : Strings.outboundTitle
 
         let textAttributes = [NSAttributedString.Key.foregroundColor: Colours.barTintColor]
 
@@ -120,9 +120,9 @@ extension InboundViewController: InboundViewProtocol {
     
     func reloadFlights() {
         if viewType == .outbound {
-            dataSource.datasource = presenter?.outbound
+            dataSource.datasource = presenter?.outboundFlightModels.map{ CellTypes.flightCell(model: FlightCellModel(from: $0, and: presenter?.getAirline(for: $0.airline))) }
         } else {
-            dataSource.datasource = inboundPresenter?.inbound.map{ CellTypes.flightCell(model: FlightCellModel(from: $0)) }
+            dataSource.datasource = inboundPresenter?.inbound.map{ CellTypes.flightCell(model: FlightCellModel(from: $0, and: inboundPresenter?.getAirline(for: $0.airline))) }
         }
         tableView.reloadData()
     }

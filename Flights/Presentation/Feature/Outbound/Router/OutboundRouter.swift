@@ -16,8 +16,8 @@ final class OutboundRouter {
 }
 
 extension OutboundRouter: OutboundRouterProtocol {
-    func goToInboundFlights(outboundModel: FlightModel, inboundFlights: [FlightModel]) {
-        let viewController = InboundServiceLocator.provideViewController(with: outboundModel, flights: inboundFlights)
+    func goToInboundFlights(airlines: [AirlineModel], outboundModel: FlightModel, inboundFlights: [FlightModel]) {
+        let viewController = InboundServiceLocator.provideViewController(airlines: airlines, with: outboundModel, flights: inboundFlights)
         view.navigationController?.pushViewController(viewController, animated: true)
     }
 }

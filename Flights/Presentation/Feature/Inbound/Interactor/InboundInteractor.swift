@@ -18,10 +18,13 @@ final class InboundInteractor {
     var dependencies: InboundInteractorDependenciesProtocol
     var outboundModel: FlightModel?
     var inboundFlights: [FlightModel]?
+    var airlines: [AirlineModel]?
     
-    init(outboundModel: FlightModel,
+    init(airlines: [AirlineModel]?,
+         outboundModel: FlightModel,
          inboundFlights: [FlightModel],
          dependencies: InboundInteractorDependenciesProtocol = DefaultInboundInteractorDependencies()) {
+        self.airlines = airlines
         self.outboundModel = outboundModel
         self.inboundFlights = inboundFlights
         self.dependencies = dependencies

@@ -15,20 +15,9 @@ final class OutboundPresenter {
     
     private let disposeBag = DisposeBag()
     
-    
-    //TODO: Reestructure this
-    var outbound: [CellTypes] = [] {
-        didSet {
-            view.reloadFlights()
-        }
-    }
-    var inbound: [CellTypes] = [] {
-        didSet {
-            view.reloadFlights()
-        }
-    }
     var inboundFlightModels: [FlightModel] = []
     var outboundFlightModels: [FlightModel] = []
+    var airlines: [AirlineModel] = []
     
     
     init(withView view: InboundViewProtocol, interactor: OutboundInteractorProtocol, router: OutboundRouterProtocol) {
@@ -40,27 +29,36 @@ final class OutboundPresenter {
 
 extension OutboundPresenter: OutboundPresenterProtocol {
     func viewDidload() {
-        interactor.getFlights()
+        Single.zip(interactor.getFlights(), interactor.getAirlines())
             .observe(on: MainScheduler.instance)
-            .subscribe{ event in
+            .subscribe { [weak self] event in
+                guard let self = self else { return }
                 switch event {
                 case .success(let model):
-                    self.inboundFlightModels = model.inbound
-                    self.outboundFlightModels = model.outbound
-                    self.inbound = model.inbound.map{CellTypes.flightCell(model: FlightCellModel(from: $0))}
-                    self.outbound = model.outbound.map{CellTypes.flightCell(model: FlightCellModel(from: $0))}
+                    self.inboundFlightModels = model.0.inbound
+                    self.outboundFlightModels = model.0.outbound
+                    self.airlines = model.1 ?? []
+                    self.view.reloadFlights()
                 case .failure(let error):
-                    if let error = error as? ServiceError {
-                        self.view.showError(error)
+                    if let _ = error as? ServiceError {
+                            guard let error = error as? ServiceError else { return }
+                            self.view.showError(error)
+                    } else {
+                        debugPrint("uncontrolled Error")
                     }
-                    debugPrint("uncontrolled Error")
                 }
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
     }
     
+    func getAirline(for name: String) -> AirlineModel? {
+        airlines.first { airlineModel in airlineModel.id == name }
+    }
+    
+
     func goToInboundFlights(outboundModelId: Int) {
-        if let outboundModel = outboundFlightModels.first{ $0.id == outboundModelId } {
-            router.goToInboundFlights(outboundModel: outboundModel, inboundFlights: inboundFlightModels)            
+        if let outboundModel = outboundFlightModels.first(where: { $0.id == outboundModelId }) {
+            router.goToInboundFlights(airlines: airlines, outboundModel: outboundModel, inboundFlights: inboundFlightModels)
         }
     }
 }

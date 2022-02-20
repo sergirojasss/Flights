@@ -9,22 +9,24 @@ import Foundation
 
 struct FlightCellModel {
     var id: Int
-    var airline: String
+    var airlineName: String
     var departure: String
     var arrival: String
     var price: Float
-    var inbounds: String
+    var airlineLogo: URL?
     
     func priceAsString() -> String {
         return "\(price) €"
     }
     
-    init(from model: FlightModel) {
+    init(from model: FlightModel, and airline: AirlineModel?) {
         id = model.id
-        airline = model.airline
+        airlineName = model.airline
         departure = model.departureAirportCode
         arrival = model.arrivalAirportCode
         price = model.price
-        inbounds = model.type == .inbound ? "IN" : "OUT"
+        if let url = URL(string: airline?.logoImg ?? "") {
+            airlineLogo = url
+        }
     }
 }

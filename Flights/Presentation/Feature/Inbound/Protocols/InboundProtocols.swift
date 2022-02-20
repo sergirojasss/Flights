@@ -16,6 +16,7 @@ protocol InboundRouterProtocol {
 }
 
 protocol InboundInteractorProtocol {
+    var airlines: [AirlineModel]? { get }
     var outboundModel: FlightModel? { get set }
     func getMatchingFlights() -> [FlightModel]
 }
@@ -24,4 +25,5 @@ protocol InboundPresenterProtocol {
     var inbound: [FlightModel] { get }
 
     func viewDidload()
+    func getAirline(for name: String) -> AirlineModel?
 }
