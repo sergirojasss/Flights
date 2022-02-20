@@ -14,6 +14,7 @@ extension FlightCell {
 }
 
 final class FlightCell: UITableViewCell, ReusableCell {
+    var model: FlightCellModel?
     
     var containerView: UIView = {
         let containerView = UIView(frame: .zero)
@@ -66,6 +67,10 @@ final class FlightCell: UITableViewCell, ReusableCell {
 
 extension FlightCell {
     //MARK: - Public methods
+    func getId() -> Int {
+        return model?.id ?? -1
+    }
+
     func configure(model: FlightCellModel) {
         airline.text = model.airline
         departure.text = model.departure

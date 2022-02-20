@@ -8,6 +8,7 @@
 import Foundation
 
 struct FlightCellModel {
+    var id: Int
     var airline: String
     var departure: String
     var arrival: String
@@ -19,6 +20,7 @@ struct FlightCellModel {
     }
     
     init(from model: FlightModel) {
+        id = model.id
         airline = model.airline
         departure = model.departureAirportCode
         arrival = model.arrivalAirportCode

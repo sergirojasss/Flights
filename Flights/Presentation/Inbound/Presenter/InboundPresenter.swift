@@ -50,6 +50,9 @@ extension InboundPresenter: InboundPresenterProtocol {
                     debugPrint("uncontrolled Error")
                 }
             }.disposed(by: disposeBag)
-        
+    }
+    
+    func goToInboundFlights(outboundId: Int) {
+        router.goToInboundFlights(outboundId: outboundId)
     }
 }

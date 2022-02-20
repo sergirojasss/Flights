@@ -39,7 +39,9 @@ enum InboundViewControllerListElements {
 
 final class InboundViewController: UIViewController {
     var presenter: InboundPresenterProtocol!
-    
+    var viewType: ViewType!
+    var selectedOutBoundId: Int?
+
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -110,6 +112,10 @@ final class InboundViewController: UIViewController {
 }
 
 extension InboundViewController: InboundViewProtocol {
+    func goToInboundFlights(outboundId: Int) {
+        presenter.goToInboundFlights(outboundId: outboundId)
+    }
+    
         func showError(_ error: ServiceError) {
         let alertView = UIAlertController(title: Strings.errorTitle, message: Strings.errorDescription, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Strings.errorOK, style: .default, handler: { _ in

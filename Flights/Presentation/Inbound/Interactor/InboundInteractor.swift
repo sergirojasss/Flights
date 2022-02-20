@@ -20,6 +20,7 @@ final class DefaultInboundInteractorDependencies: InboundInteractorDependenciesP
 
 final class InboundInteractor {
     var dependencies: InboundInteractorDependenciesProtocol
+    var outboundId: Int?
     
     init(dependencies: InboundInteractorDependenciesProtocol = DefaultInboundInteractorDependencies()) {
         self.dependencies = dependencies
