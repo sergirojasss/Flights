@@ -23,7 +23,7 @@ final class InboundViewDatasource: NSObject, UITableViewDataSource {
 
     func registerCells() {
         tableView?.register(cellType: FlightCell.self)
-        //        tableView?.register(cellType: MainNewCell.self)
+        tableView?.register(cellType: ShimmerCell.self)
         //        tableView?.register(cellType: EmptyCell.self)
     }
 
@@ -40,6 +40,11 @@ final class InboundViewDatasource: NSObject, UITableViewDataSource {
         case .flightCell(let model):
             let cell: FlightCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(model: model)
+            cell.selectionStyle = .none
+            return cell
+        case .shimmer:
+            let cell: ShimmerCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure()
             cell.selectionStyle = .none
             return cell
         default:

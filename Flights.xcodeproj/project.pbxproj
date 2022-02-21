@@ -23,6 +23,8 @@
 		A8356A2927C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2827C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift */; };
 		A8356A2B27C3E75A007C3D96 /* InboundFlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2A27C3E75A007C3D96 /* InboundFlightTests.swift */; };
 		A8356A2D27C40B5D007C3D96 /* TotalPriceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2C27C40B5D007C3D96 /* TotalPriceTest.swift */; };
+		A8356A3027C41047007C3D96 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2F27C41047007C3D96 /* ShimmerCell.swift */; };
+		A8356A3227C410E1007C3D96 /* UIView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
@@ -99,6 +101,8 @@
 		A8356A2827C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightsUseCaseDependencies.swift; sourceTree = "<group>"; };
 		A8356A2A27C3E75A007C3D96 /* InboundFlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundFlightTests.swift; sourceTree = "<group>"; };
 		A8356A2C27C40B5D007C3D96 /* TotalPriceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTest.swift; sourceTree = "<group>"; };
+		A8356A2F27C41047007C3D96 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
+		A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmer.swift"; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +256,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		A8356A2E27C41036007C3D96 /* ShimmerCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A2F27C41047007C3D96 /* ShimmerCell.swift */,
+			);
+			path = ShimmerCell;
+			sourceTree = "<group>";
+		};
 		A8C6E52D27C1019700E573AC = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +330,7 @@
 				A8C6E58227C1071300E573AC /* Errors.swift */,
 				A8C6E5F627C24A7300E573AC /* NibReusable.swift */,
 				A8356A2127C3B08A007C3D96 /* EndPoints.swift */,
+				A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -483,6 +496,7 @@
 		A8C6E5F027C2498400E573AC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A8356A2E27C41036007C3D96 /* ShimmerCell */,
 				A8C6E5F327C2499A00E573AC /* FlightCell */,
 			);
 			path = Cells;
@@ -767,6 +781,7 @@
 				A8C6E5DD27C238AE00E573AC /* OutboundPresenter.swift in Sources */,
 				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
 				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
+				A8356A3027C41047007C3D96 /* ShimmerCell.swift in Sources */,
 				A8C6E58727C1080900E573AC /* AirlineEntity.swift in Sources */,
 				A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */,
 				A8356A0D27C271F7007C3D96 /* InboundProtocols.swift in Sources */,
@@ -792,6 +807,7 @@
 				A8C6E5DF27C238AE00E573AC /* OutboundProtocols.swift in Sources */,
 				A8C6E5F527C249A800E573AC /* FlightCellModel.swift in Sources */,
 				A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */,
+				A8356A3227C410E1007C3D96 /* UIView+Shimmer.swift in Sources */,
 				A8C6E5E027C238AE00E573AC /* OutboundInteractor.swift in Sources */,
 				A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */,
 				A8356A1627C27523007C3D96 /* CellTypes.swift in Sources */,

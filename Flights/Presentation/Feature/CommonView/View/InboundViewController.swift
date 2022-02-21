@@ -41,7 +41,13 @@ final class InboundViewController: UIViewController {
     }()
     
     private lazy var dataSource: InboundViewDatasource = {
-        InboundViewDatasource(tableView: tableView)
+        let dataSource = InboundViewDatasource(tableView: tableView)
+        dataSource.datasource = [CellTypes.shimmer,
+                                 CellTypes.shimmer,
+                                 CellTypes.shimmer,
+                                 CellTypes.shimmer,
+                                 CellTypes.shimmer]
+        return dataSource
     }()
     
     private lazy var delegate: InboundViewDelegate = {

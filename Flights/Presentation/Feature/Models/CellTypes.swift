@@ -8,5 +8,4 @@
 enum CellTypes {
     case shimmer
     case flightCell(model: FlightCellModel)
-    case emptyCell(title: String)
 }
