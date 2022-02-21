@@ -29,8 +29,9 @@ struct FlightEntityWithLogo: Transport {
     var price: Float
     let type: FlightType
     let logo: URL?
+    let airlineDesc: String
     
-    init(from entity: FlightEntity, logo: URL?) {
+    init(from entity: FlightEntity, logo: URL?, airlineDesc: String?) {
         self.id = entity.id
         self.airline = entity.airline
         self.departureAirportCode = entity.departureAirportCode
@@ -38,6 +39,7 @@ struct FlightEntityWithLogo: Transport {
         self.price = entity.price
         self.type = entity.type
         self.logo = logo
+        self.airlineDesc = airlineDesc ?? ""
     }
     
     func isCombinableWith(transport: Transport) -> Bool {

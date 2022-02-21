@@ -20,6 +20,7 @@ struct FlightModel {
     let airline: String
     let departureAirportCode, arrivalAirportCode: String
     let airlineLogo: URL?
+    let airlineDesc: String?
     let type: FlightTypeModel
     
     init(from entity: FlightEntityWithLogo) {
@@ -29,6 +30,7 @@ struct FlightModel {
         self.departureAirportCode = entity.departureAirportCode
         self.arrivalAirportCode = entity.arrivalAirportCode
         self.airlineLogo = entity.logo
+        self.airlineDesc = entity.airlineDesc
         self.type = entity.type == .inbound ? .inbound : .outbound
     }
     

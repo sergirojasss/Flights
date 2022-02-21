@@ -65,10 +65,12 @@ extension ShimmerCell {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Constraints.spacingCells),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constraints.leadingWithContentView),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constraints.trailingWithContentView),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constraints.spacingCells),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constraints.spacingCells),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constraints.leadingWithContentView),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.trailingWithContentView),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
+            
+            containerView.heightAnchor.constraint(equalToConstant: 220.0)
         ])
     }
 

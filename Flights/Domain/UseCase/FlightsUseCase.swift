@@ -110,9 +110,11 @@ extension DefaultFlightsUseCase {
             if let airline = airlines.first(where: { airlineEntity in
                 airlineEntity.id == flight.airline
             }) {
-                flightsWithLogo.append(FlightEntityWithLogo(from: flight, logo: URL(string: airline.logoImg)))
+                flightsWithLogo.append(FlightEntityWithLogo(from: flight,
+                                                            logo: URL(string: airline.logoImg),
+                                                            airlineDesc: airline.airlineDescription))
             } else {
-                flightsWithLogo.append(FlightEntityWithLogo(from: flight, logo: nil))
+                flightsWithLogo.append(FlightEntityWithLogo(from: flight, logo: nil, airlineDesc: nil))
             }
         }
         return flightsWithLogo
