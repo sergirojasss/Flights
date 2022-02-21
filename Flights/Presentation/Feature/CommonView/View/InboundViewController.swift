@@ -101,9 +101,19 @@ final class InboundViewController: UIViewController {
     
 }
 
+extension InboundViewController: OutboundViewProtocol {
+    func goToOutboundFlights(outboundId: Int) {
+        presenter?.goToInboundFlights(outboundModelId: outboundId)
+    }
+}
+
 extension InboundViewController: InboundViewProtocol {
+
+    func reloadFlights(with model: [FlightModel]) {
+        dataSource.datasource = model.map{ CellTypes.flightCell(model: FlightCellModel(from: $0)) }
+    }
     
-        func showError(_ error: ServiceError) {
+    func showError(_ error: ServiceError) {
         let alertView = UIAlertController(title: Strings.errorTitle, message: Strings.errorDescription, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Strings.errorOK, style: .default, handler: { _ in
             //TODO: Retry button
@@ -111,17 +121,6 @@ extension InboundViewController: InboundViewProtocol {
         })
         alertView.addAction(okAction)
         present(alertView, animated: true, completion: nil)
-    }
-    
-    func reloadFlights() {
-        if viewType == .outbound {
-            dataSource.datasource = presenter?.outboundFlightModels.map{ CellTypes.flightCell(model: FlightCellModel(from: $0, and: presenter?.getAirline(for: $0.airline))) }
-        } else {
-            dataSource.datasource = inboundPresenter?.inbound.map{ CellTypes.flightCell(model: FlightCellModel(from: $0, and: inboundPresenter?.getAirline(for: $0.airline))) }
-        }
-        tableView.reloadData()
-        //TODO: Select first
-//        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
     }
 }
 

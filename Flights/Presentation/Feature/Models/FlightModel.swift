@@ -14,34 +14,23 @@ enum FlightTypeModel {
     case inbound
 }
 
-struct FlightModel: Transport {
-    var id: Int
-    var price: Float
+struct FlightModel {
+    let id: Int
+    let price: Float
     let airline: String
     let departureAirportCode, arrivalAirportCode: String
+    let airlineLogo: URL?
     let type: FlightTypeModel
     
-    func isCombinableWith(transport: Transport) -> Bool {
-        guard let flight = transport as? FlightModel else { return false }
-        if airline == flight.airline
-            && departureAirportCode == flight.arrivalAirportCode
-            && arrivalAirportCode == flight.departureAirportCode { return true }
-        return false
+    init(from entity: FlightEntityWithLogo) {
+        self.id = entity.id
+        self.price = entity.price
+        self.airline = entity.airline
+        self.departureAirportCode = entity.departureAirportCode
+        self.arrivalAirportCode = entity.arrivalAirportCode
+        self.airlineLogo = entity.logo
+        self.type = entity.type == .inbound ? .inbound : .outbound
     }
     
-    func isCombinableWith(transports: [Transport]) -> [FlightModel] {
-        guard let flights = transports as? [FlightModel] else { return [] }
-        let meetAirlineAndAirport = flights.filter { flightModel in
-            return isCombinableWith(transport: flightModel)
-        }
-        if !meetAirlineAndAirport.isEmpty {
-            return meetAirlineAndAirport
-        }
-        let meetOnlyAirports = flights.filter { flightModel in
-            return departureAirportCode == flightModel.arrivalAirportCode
-            && arrivalAirportCode == flightModel.departureAirportCode
-        }
-        return meetOnlyAirports
-    }
 }
 

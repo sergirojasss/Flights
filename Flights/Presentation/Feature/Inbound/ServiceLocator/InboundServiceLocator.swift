@@ -8,12 +8,14 @@
 import Foundation
 
 final class InboundServiceLocator {
-    static func provideViewController(airlines: [AirlineModel], with outboundModel: FlightModel, flights: [FlightModel]) -> InboundViewController {
+    static func provideViewController(outbundFlightId: Int,
+                                      useCase: FlightsUseCase) -> InboundViewController {
         let viewController = InboundViewController()
         viewController.viewType = .inbound
         let router = InboundRouter(withView: viewController)
 
-        let interactor = InboundInteractor(airlines: airlines, outboundModel: outboundModel, inboundFlights: flights)
+        let interactor = InboundInteractor(outbundFlightId: outbundFlightId,
+                                           dependencies: DefaultInboundInteractorDependencies(useCase: useCase))
         let presenter = InboundPresenter(withView: viewController, interactor: interactor, router: router)
         
         viewController.inboundPresenter = presenter

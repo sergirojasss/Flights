@@ -9,21 +9,11 @@ import Foundation
 import RxSwift
 
 final class InboundPresenter {
+    private let disposeBag = DisposeBag()
+
     let router: InboundRouterProtocol
     let interactor: InboundInteractorProtocol
     var view: InboundViewProtocol!
-    
-    private let disposeBag = DisposeBag()
-    
-    var inbound: [FlightModel] = [] {
-        didSet {
-            view.reloadFlights()
-        }
-    }
-    var airlines: [AirlineModel]? {
-        interactor.airlines
-    }
-
     
     init(withView view: InboundViewProtocol, interactor: InboundInteractorProtocol, router: InboundRouterProtocol) {
         self.view = view
@@ -34,10 +24,16 @@ final class InboundPresenter {
 
 extension InboundPresenter: InboundPresenterProtocol {
     func viewDidload() {
-        inbound = interactor.getMatchingFlights()
-    }
-    
-    func getAirline(for name: String) -> AirlineModel? {
-        airlines?.first { airlineModel in airlineModel.id == name }
-    }
+        interactor.getMatchingFlights()
+            .observe(on: MainScheduler.instance)
+            .subscribe { [weak self] event in
+                guard let self = self else { return }
+                switch event {
+                case .success(let flightModel):
+                    self.view.reloadFlights(with: flightModel)
+                case .failure(let error):
+                    break
+                }
+            }
+    }    
 }

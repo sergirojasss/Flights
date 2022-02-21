@@ -10,15 +10,14 @@ import RxSwift
 
 protocol OutboundInteractorDependenciesProtocol {
     var flightsUseCase: FlightsUseCase { get set }
-    var airlinesUseCase: AirlinesUseCase { get set }
 }
 
 final class DefaultOutboundInteractorDependencies: OutboundInteractorDependenciesProtocol {
     lazy var flightsUseCase: FlightsUseCase = DefaultFlightsUseCase()
-    lazy var airlinesUseCase: AirlinesUseCase = DefaultAirlinesUseCase()
 }
 
 final class OutboundInteractor {
+    private let disposeBag = DisposeBag()
     var dependencies: OutboundInteractorDependenciesProtocol
     
     init(dependencies: OutboundInteractorDependenciesProtocol = DefaultOutboundInteractorDependencies()) {
@@ -26,24 +25,16 @@ final class OutboundInteractor {
     }
 }
 
-extension OutboundInteractor: OutboundInteractorProtocol {
-    func getFlights() -> Single<(inbound: [FlightModel], outbound: [FlightModel])> {
-        dependencies.flightsUseCase.execute(orderBy: .asc).map { result -> (inbound: [FlightModel], outbound: [FlightModel]) in
-            var inbound: [FlightModel] = []
-            var outbound: [FlightModel] = []
-            for flight in result {
-                flight.type == .inbound ? inbound.append(flight.toModel()) : outbound.append(flight.toModel())
+extension OutboundInteractor: OutboundInteractorProtocol {    
+    func loadFlightsWithLogo() -> Single<[FlightModel]> {
+        dependencies.flightsUseCase.loadAllInfo()
+            .observe(on: MainScheduler.instance)
+            .map { (model: ([FlightEntityWithLogo])) -> [FlightModel] in
+                var models = [FlightModel]()
+                for flight in model {
+                    models.append(FlightModel(from: flight))
+                }
+                return models
             }
-            return (inbound, outbound)
-        }
-    }
-    func getAirlines() -> Single<[AirlineModel]?> {
-        dependencies.airlinesUseCase.execute().map { result -> [AirlineModel] in
-            var airlines: [AirlineModel] = []
-            for airline in result ?? [] {
-                airlines.append(airline.toModel())
-            }
-            return airlines
-        }
     }
 }

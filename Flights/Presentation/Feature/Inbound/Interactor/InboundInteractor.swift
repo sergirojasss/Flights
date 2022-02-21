@@ -9,31 +9,30 @@ import Foundation
 import RxSwift
 
 protocol InboundInteractorDependenciesProtocol {
+    var flightsUseCase: FlightsUseCase { get set }
 }
 
 final class DefaultInboundInteractorDependencies: InboundInteractorDependenciesProtocol {
+    var flightsUseCase: FlightsUseCase
+    
+    init(useCase: FlightsUseCase = DefaultFlightsUseCase()) {
+        self.flightsUseCase = useCase
+    }
 }
 
 final class InboundInteractor {
     var dependencies: InboundInteractorDependenciesProtocol
-    var outboundModel: FlightModel?
-    var inboundFlights: [FlightModel]?
-    var airlines: [AirlineModel]?
+    var outbundFlightId: Int
     
-    init(airlines: [AirlineModel]?,
-         outboundModel: FlightModel,
-         inboundFlights: [FlightModel],
+    init(outbundFlightId: Int,
          dependencies: InboundInteractorDependenciesProtocol = DefaultInboundInteractorDependencies()) {
-        self.airlines = airlines
-        self.outboundModel = outboundModel
-        self.inboundFlights = inboundFlights
         self.dependencies = dependencies
+        self.outbundFlightId = outbundFlightId
     }
 }
 
 extension InboundInteractor: InboundInteractorProtocol {
-    func getMatchingFlights() -> [FlightModel] {
-        let matching = outboundModel?.isCombinableWith(transports: inboundFlights ?? [])
-        return matching ?? []
+    func getMatchingFlights() -> Single<[FlightModel]> {
+        return .just(dependencies.flightsUseCase.getInboundFlights(for: outbundFlightId).map{FlightModel(from: $0)})
     }
 }

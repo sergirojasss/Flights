@@ -19,14 +19,12 @@ struct FlightCellModel {
         return "\(price) €"
     }
     
-    init(from model: FlightModel, and airline: AirlineModel?) {
+    init(from model: FlightModel) {
         id = model.id
         airlineName = model.airline
         departure = model.departureAirportCode
         arrival = model.arrivalAirportCode
         price = model.price
-        if let url = URL(string: airline?.logoImg ?? "") {
-            airlineLogo = url
-        }
+        airlineLogo = model.airlineLogo
     }
 }

@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol InboundViewProtocol {
-    func reloadFlights()
+    func reloadFlights(with model: [FlightModel])
     func showError(_ error: ServiceError)
 }
 
@@ -16,14 +16,9 @@ protocol InboundRouterProtocol {
 }
 
 protocol InboundInteractorProtocol {
-    var airlines: [AirlineModel]? { get }
-    var outboundModel: FlightModel? { get set }
-    func getMatchingFlights() -> [FlightModel]
+    func getMatchingFlights() -> Single<[FlightModel]>
 }
 
 protocol InboundPresenterProtocol {
-    var inbound: [FlightModel] { get }
-
     func viewDidload()
-    func getAirline(for name: String) -> AirlineModel?
 }
