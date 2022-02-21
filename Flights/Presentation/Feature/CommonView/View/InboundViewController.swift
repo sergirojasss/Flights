@@ -48,7 +48,9 @@ final class InboundViewController: UIViewController {
                                  CellTypes.shimmer,
                                  CellTypes.shimmer,
                                  CellTypes.shimmer,
-                                 CellTypes.shimmer]
+                                 CellTypes.shimmer,
+                                 CellTypes.shimmer,
+                                 CellTypes.shimmer,]
         return dataSource
     }()
     
@@ -88,7 +90,8 @@ final class InboundViewController: UIViewController {
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         tableView.alwaysBounceVertical = false
-        tableView.estimatedRowHeight = 500.0
+        tableView.estimatedRowHeight = 220.0
+        tableView.rowHeight = UITableView.automaticDimension
 
         dataSource.registerCells()
     }

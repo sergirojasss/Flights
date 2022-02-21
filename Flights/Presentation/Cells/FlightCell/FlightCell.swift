@@ -26,6 +26,15 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return containerView
     }()
 
+    var separatorView: UIView = {
+        let containerView = UIView(frame: .zero)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.backgroundColor = .gray.withAlphaComponent(0.5)
+        containerView.layer.cornerRadius = Constants.cornerRadius
+        return containerView
+    }()
+
     var airlineLogo: UIImageView = {
         let airlineLogo = UIImageView(frame: .zero)
         airlineLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +62,15 @@ final class FlightCell: UITableViewCell, ReusableCell {
         
         return label
     }()
-    
+
+    var airlineDescription: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.numberOfLines = 0
+        return label
+    }()
+
     var departure: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +99,8 @@ final class FlightCell: UITableViewCell, ReusableCell {
         containerView.addSubview(arrival)
         containerView.addSubview(airlineLogo)
         containerView.addSubview(airline)
+        containerView.addSubview(separatorView)
+        containerView.addSubview(airlineDescription)
 
         containerView.addSubview(price)
         setupConstraints()
@@ -103,6 +122,7 @@ extension FlightCell {
         if let url = model.airlineLogo {
             airlineLogo.load(url: url)            
         }
+        airlineDescription.text = "alkjsdflskdfj alskdfjaslñfkj añlskdfjañslkjdf alñskjdfalsñkjdflñaskdjfalñskdfjalñskjflskdjfñlaskjdflñakjfñlfjk"
 
         setupView()
         layoutIfNeeded()
@@ -122,6 +142,7 @@ extension FlightCell {
     }
 
     private func setupConstraints() {
+        //TODO: Magic numbers
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: Constraints.spacingCells),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constraints.leadingWithContentView),
@@ -132,19 +153,20 @@ extension FlightCell {
             departure.heightAnchor.constraint(equalToConstant: 20.5),
             departure.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
             departure.trailingAnchor.constraint(equalTo: planeImage.leadingAnchor, constant: -Constraints.spacingLabels),
-            departure.bottomAnchor.constraint(lessThanOrEqualTo: airlineLogo.topAnchor),
+            departure.bottomAnchor.constraint(equalTo: airlineLogo.topAnchor, constant: -Constraints.spacingLabels),
             
+            planeImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
             planeImage.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
             planeImage.trailingAnchor.constraint(equalTo: arrival.leadingAnchor, constant: -Constraints.spacingLabels),
             planeImage.widthAnchor.constraint(equalToConstant: 15.0),
             planeImage.heightAnchor.constraint(equalToConstant: 15.0),
             
+            arrival.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
             arrival.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
             
             airlineLogo.leadingAnchor.constraint(equalTo: departure.leadingAnchor),
             airlineLogo.heightAnchor.constraint(equalToConstant: 25.0),
             airlineLogo.widthAnchor.constraint(equalToConstant: 25.0),
-            airlineLogo.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constraints.spacingLabels),
             
             airline.centerYAnchor.constraint(equalTo: airlineLogo.centerYAnchor),
             airline.leadingAnchor.constraint(equalTo: airlineLogo.trailingAnchor, constant: Constraints.spacingLabels),
@@ -152,7 +174,17 @@ extension FlightCell {
             price.leadingAnchor.constraint(greaterThanOrEqualTo: arrival.trailingAnchor, constant: Constraints.spacingLabels),
             price.leadingAnchor.constraint(greaterThanOrEqualTo: airline.trailingAnchor, constant: Constraints.spacingLabels),
             price.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.trailingWithContentView),
-            price.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            price.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
+
+            separatorView.topAnchor.constraint(equalTo: airlineLogo.bottomAnchor, constant: Constraints.spacingLabels),
+            separatorView.leadingAnchor.constraint(equalTo: airlineLogo.leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: price.trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 2.0),
+            
+            airlineDescription.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: Constraints.spacingLabels),
+            airlineDescription.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
+            airlineDescription.trailingAnchor.constraint(equalTo: separatorView.trailingAnchor),
+            airlineDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constraints.spacingCells)
         ])
     }
 
