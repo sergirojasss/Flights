@@ -11,9 +11,7 @@ import RxSwift
 
 // testing
 //protocol FlightsUseCase {
-//    func loadAllInfo() -> Single<([FlightEntityWithLogo])>
-//    func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo]
-//    func getFlight(for id: Int) -> FlightEntityWithLogo?
+//    func getOutboundFlights() -> Single<([FlightEntityWithLogo])>
 //}
 
 

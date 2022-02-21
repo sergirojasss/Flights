@@ -16,7 +16,7 @@ enum orderFlightsPrice {
 protocol FlightsUseCase {
     func getOutboundFlights() -> Single<([FlightEntityWithLogo])>
     func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo]
-    func getFlight(for id: Int) -> FlightEntityWithLogo?
+    func getTotalPrice(outboundId: Int, inboundId: Int) -> Float?
 }
 
 protocol FlightsUseCaseDependenciesProtocol {
@@ -67,8 +67,10 @@ final class DefaultFlightsUseCase: FlightsUseCase {
         return []
     }
     
-    func getFlight(for id: Int) -> FlightEntityWithLogo? {
-        getFlightWithLogo(flightId: id)
+    func getTotalPrice(outboundId: Int, inboundId: Int) -> Float? {
+        guard let out = getFlight(for: outboundId),
+              let inBound = getFlight(for: inboundId) else { return nil }
+        return out.price + inBound.price
     }
 }
 
@@ -98,6 +100,9 @@ extension DefaultFlightsUseCase {
         } }
     }
     
+    private func getFlight(for id: Int) -> FlightEntityWithLogo? {
+        getFlightWithLogo(flightId: id)
+    }
     
     private func getEveryFlightWithLogo(flights: [FlightEntity]) -> [FlightEntityWithLogo] {
         var flightsWithLogo = [FlightEntityWithLogo]()

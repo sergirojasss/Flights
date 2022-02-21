@@ -18,7 +18,7 @@ protocol InboundRouterProtocol {
 
 protocol InboundInteractorProtocol {
     func getMatchingFlights() -> Single<[FlightModel]>
-    func getTotalPrice(inboundId: Int) -> Float? 
+    func getTotalPrice(inboundId: Int) -> Float?
 }
 
 protocol InboundPresenterProtocol {

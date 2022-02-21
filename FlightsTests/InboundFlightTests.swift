@@ -68,7 +68,7 @@ extension InboundFlightTests {
         }
     
     private func expect(sut: FlightsUseCase, outboundFlightId: Int, expectedResult: Int? = 0, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Waiting for info")
+        let exp = expectation(description: "Waiting for info") 
         var receivedResult: Int = 0
         
         

@@ -167,20 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "126054F6-78BA-4875-8232-7CA64C6CB953"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flights/Presentation/Feature/Inbound/Interactor/InboundInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FD876083-3B5C-4BE8-A4C3-0AF3960A7013"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -188,10 +174,42 @@
             filePath = "FlightsTests/FlightsTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "expect(sut:expectedResult:expectedError:file:line:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FD876083-3B5C-4BE8-A4C3-0AF3960A7013 - ea39a8eaa310263e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Flights.FlightEntityWithLogo&gt;, Swift.Error&gt;) -&gt; () in FlightsTests.FlightsTests.expect(sut: Flights.FlightsUseCase, expectedResult: Swift.Optional&lt;Swift.Int&gt;, expectedError: Swift.Optional&lt;Flights.ServiceError&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "FlightsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srojas/Documents/XCode/Flights/Flights/FlightsTests/FlightsTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "499">
+               </Location>
+               <Location
+                  uuid = "FD876083-3B5C-4BE8-A4C3-0AF3960A7013 - ea39a8eaa310267c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Flights.FlightEntityWithLogo&gt;, Swift.Error&gt;) -&gt; () in FlightsTests.FlightsTests.expect(sut: Flights.FlightsUseCase, expectedResult: Swift.Optional&lt;Swift.Int&gt;, expectedError: Swift.Optional&lt;Flights.ServiceError&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "FlightsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/srojas/Documents/XCode/Flights/Flights/FlightsTests/FlightsTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "558">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
