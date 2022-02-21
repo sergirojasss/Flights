@@ -112,9 +112,9 @@ extension DefaultFlightsUseCase {
             }) {
                 flightsWithLogo.append(FlightEntityWithLogo(from: flight,
                                                             logo: URL(string: airline.logoImg),
-                                                            airlineDesc: airline.airlineDescription))
+                                                            headline: airline.headline))
             } else {
-                flightsWithLogo.append(FlightEntityWithLogo(from: flight, logo: nil, airlineDesc: nil))
+                flightsWithLogo.append(FlightEntityWithLogo(from: flight, logo: nil, headline: nil))
             }
         }
         return flightsWithLogo

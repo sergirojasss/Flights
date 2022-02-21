@@ -11,9 +11,7 @@ import RxSwift
 extension InboundViewController {
     private enum Colours {
         static let backGroundColor = UIColor.white
-        static let navBarTintColor = UIColor.red
-        static let bayStyleColor = UIColor.black
-        static let barTintColor = UIColor.red
+        static let barTintColor = UIColor.customBlue
     }
 
     private enum Strings {
@@ -22,7 +20,7 @@ extension InboundViewController {
         static let inboundTtitle = "Inbound"
         static let errorTitle = "Error"
         static let errorDescription = "Ha ocurrido un error"
-        static let errorOK = "Ok"
+        static let errorOK = "OK"
         static let emptyString = ""
         static let emptyTitle = "No matching flights"
         static let emptyDescription = "Try another outbound flight"

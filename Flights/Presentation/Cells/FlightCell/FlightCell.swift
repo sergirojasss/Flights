@@ -12,6 +12,20 @@ extension FlightCell {
         static let contentMode = ContentMode.scaleAspectFill
         static let cornerRadius = CGFloat(6.0)
     }
+    
+    private enum Fonts {
+        static let titleLabelFont = UIFont.semibold(size: 16)
+        static let priceLabelFont = UIFont.extraBold(size: 20)
+        static let descriptionLabelFont = UIFont.regular(size: 11)
+    }
+
+    private enum Colors {
+        static let titleLabelColor = UIColor.customBlack
+        static let priceLabelColor = UIColor.customBlue
+        static let descriptionLabelColor = UIColor.customGray
+        static let shadowColor = UIColor.customBlack.cgColor
+        static let borderBackgroundColor = UIColor.white
+    }
 }
 
 final class FlightCell: UITableViewCell, ReusableCell {
@@ -30,7 +44,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let containerView = UIView(frame: .zero)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = .gray.withAlphaComponent(0.5)
+        containerView.backgroundColor = Colors.priceLabelColor.withAlphaComponent(0.4)
         containerView.layer.cornerRadius = Constants.cornerRadius
         return containerView
     }()
@@ -60,13 +74,17 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.font = Fonts.titleLabelFont
+        label.textColor = Colors.titleLabelColor
         return label
     }()
 
-    var airlineDescription: UILabel = {
+    var airlineHeadline: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.font = Fonts.descriptionLabelFont
+        label.textColor = Colors.descriptionLabelColor
         label.numberOfLines = 0
         return label
     }()
@@ -75,6 +93,8 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.font = Fonts.titleLabelFont
+        label.textColor = Colors.titleLabelColor
         return label
     }()
 
@@ -82,6 +102,8 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.font = Fonts.titleLabelFont
+        label.textColor = Colors.titleLabelColor
         return label
     }()
     
@@ -89,6 +111,8 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.font = Fonts.priceLabelFont
+        label.textColor = Colors.priceLabelColor
         return label
     }()
 
@@ -100,7 +124,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         containerView.addSubview(airlineLogo)
         containerView.addSubview(airline)
         containerView.addSubview(separatorView)
-        containerView.addSubview(airlineDescription)
+        containerView.addSubview(airlineHeadline)
         containerView.addSubview(price)
         
         setupConstraints()
@@ -122,7 +146,7 @@ extension FlightCell {
         if let url = model.airlineLogo {
             airlineLogo.load(url: url)            
         }
-        airlineDescription.text = model.airlineDesc
+        airlineHeadline.text = model.airlineHeadline
 
         self.setupView()
     }
@@ -173,17 +197,18 @@ extension FlightCell {
             price.leadingAnchor.constraint(greaterThanOrEqualTo: arrival.trailingAnchor, constant: Constraints.spacingLabels),
             price.leadingAnchor.constraint(greaterThanOrEqualTo: airline.trailingAnchor, constant: Constraints.spacingLabels),
             price.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.trailingWithContentView),
-            price.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
+            price.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
+            price.bottomAnchor.constraint(equalTo: separatorView.topAnchor, constant: -Constraints.topWithContentView),
 
-            separatorView.topAnchor.constraint(equalTo: airlineLogo.bottomAnchor, constant: Constraints.spacingLabels),
+            separatorView.topAnchor.constraint(equalTo: airlineLogo.bottomAnchor, constant: Constraints.topWithContentView),
             separatorView.leadingAnchor.constraint(equalTo: airlineLogo.leadingAnchor),
             separatorView.trailingAnchor.constraint(equalTo: price.trailingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 2.0),
             
-            airlineDescription.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: Constraints.spacingCells),
-            airlineDescription.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
-            airlineDescription.trailingAnchor.constraint(equalTo: separatorView.trailingAnchor),
-            airlineDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constraints.topWithContentView)
+            airlineHeadline.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: Constraints.topWithContentView),
+            airlineHeadline.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
+            airlineHeadline.trailingAnchor.constraint(equalTo: separatorView.trailingAnchor),
+            airlineHeadline.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constraints.topWithContentView)
         ])
     }
 

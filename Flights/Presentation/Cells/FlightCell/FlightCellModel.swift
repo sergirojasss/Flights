@@ -14,7 +14,7 @@ struct FlightCellModel {
     var arrival: String
     var price: Float
     var airlineLogo: URL?
-    var airlineDesc: String?
+    var airlineHeadline: String?
     
     func priceAsString() -> String {
         return "\(price) €"
@@ -27,6 +27,6 @@ struct FlightCellModel {
         arrival = model.arrivalAirportCode
         price = model.price
         airlineLogo = model.airlineLogo
-        airlineDesc = model.airlineDesc
+        airlineHeadline = model.airlineHeadline
     }
 }

@@ -25,6 +25,8 @@
 		A8356A2D27C40B5D007C3D96 /* TotalPriceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2C27C40B5D007C3D96 /* TotalPriceTest.swift */; };
 		A8356A3027C41047007C3D96 /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2F27C41047007C3D96 /* ShimmerCell.swift */; };
 		A8356A3227C410E1007C3D96 /* UIView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */; };
+		A8356A3927C454B6007C3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A3827C454B6007C3D96 /* UIColor+Extension.swift */; };
+		A8356A3B27C45555007C3D96 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A3A27C45555007C3D96 /* UIFont+Extension.swift */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
@@ -103,6 +105,8 @@
 		A8356A2C27C40B5D007C3D96 /* TotalPriceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTest.swift; sourceTree = "<group>"; };
 		A8356A2F27C41047007C3D96 /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
 		A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmer.swift"; sourceTree = "<group>"; };
+		A8356A3827C454B6007C3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A8356A3A27C45555007C3D96 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				A8C6E5F627C24A7300E573AC /* NibReusable.swift */,
 				A8356A2127C3B08A007C3D96 /* EndPoints.swift */,
 				A8356A3127C410E1007C3D96 /* UIView+Shimmer.swift */,
+				A8356A3827C454B6007C3D96 /* UIColor+Extension.swift */,
+				A8356A3A27C45555007C3D96 /* UIFont+Extension.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -793,6 +799,8 @@
 				A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */,
 				A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */,
 				A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */,
+				A8356A3B27C45555007C3D96 /* UIFont+Extension.swift in Sources */,
+				A8356A3927C454B6007C3D96 /* UIColor+Extension.swift in Sources */,
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
 				A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */,
 				A8C6E5F227C2499200E573AC /* FlightCell.swift in Sources */,
