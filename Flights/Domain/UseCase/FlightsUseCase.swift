@@ -19,18 +19,31 @@ protocol FlightsUseCase {
     func getFlight(for id: Int) -> FlightEntityWithLogo?
 }
 
-final class DefaultFlightsUseCase: FlightsUseCase {
-    
-    private let flightsListRepo: FlightsRepository
-    private let airlinesListRepo: AirlinesRepository
-    
-    var flights: [FlightEntityWithLogo] = []
-    var airlines: [AirlineEntity] = []
+protocol FlightsUseCaseDependenciesProtocol {
+    var flightsListRepo: FlightsRepository { get set }
+    var airlinesListRepo: AirlinesRepository { get set }
+}
+
+final class DefaultFlightsUseCaseDependencies: FlightsUseCaseDependenciesProtocol {
+    lazy var flightsListRepo: FlightsRepository = DefaultFlightsRepository()
+    lazy var airlinesListRepo: AirlinesRepository = DefaultAirlinesRepository()
     
     init(flightsListRepo: FlightsRepository = DefaultFlightsRepository(),
          airlinesListRepo: AirlinesRepository = DefaultAirlinesRepository()) {
         self.flightsListRepo = flightsListRepo
         self.airlinesListRepo = airlinesListRepo
+    }
+}
+
+final class DefaultFlightsUseCase: FlightsUseCase {
+    
+    private let dependencies: FlightsUseCaseDependenciesProtocol
+    
+    var flights: [FlightEntityWithLogo] = []
+    var airlines: [AirlineEntity] = []
+    
+    init(dependencies: FlightsUseCaseDependenciesProtocol = DefaultFlightsUseCaseDependencies()) {
+        self.dependencies = dependencies
     }
     
     //MARK: - Public methods
@@ -67,11 +80,11 @@ final class DefaultFlightsUseCase: FlightsUseCase {
 //MARK: - Private methods
 extension DefaultFlightsUseCase {
     private func getAirlines() -> Single<[AirlineEntity]?> {
-        return airlinesListRepo.airlines()
+        dependencies.airlinesListRepo.airlines()
     }
     
     private func getFlights(orderBy: orderFlightsPrice) -> Single<[FlightEntity]> {
-        flightsListRepo.flightsList().map{ $0.sorted { lhs, rhs in
+        dependencies.flightsListRepo.flightsList().map{ $0.sorted { lhs, rhs in
             orderBy == .asc ? lhs.price < rhs.price : lhs.price > rhs.price
         } }
     }

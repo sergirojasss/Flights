@@ -9,23 +9,61 @@ import XCTest
 import RxSwift
 @testable import Flights
 
+// testing
+//protocol FlightsUseCase {
+//    func loadAllInfo() -> Single<([FlightEntityWithLogo])>
+//    func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo]
+//    func getFlight(for id: Int) -> FlightEntityWithLogo?
+//}
+
+
 class FlightsTests: XCTestCase {
     func test_retrieveAllInfo_returns11Flights() {
         let sut = makeSUT()
         expect(sut: sut, expectedResult: 11)
     }
 
-    func test_retrieveAllInfo_returnsError() {
-        let sut = makeSUT(endsWithError: true)
+    //MARK: - responseError testing
+    func test_retrieveAllInfo_flightsRepoEndsWithError_airlinesRepoEndsWithError_deliversServiceResponseError() {
+        let sut = makeSUT(flightsEndsWithError: true, airlinesEndsWithError: true)
+        expect(sut: sut, expectedResult: 0, expectedError: ServiceError.responseError)
+    }
+
+    func test_retrieveAllInfo_flightsRepoEndsWithNoError_airlinesRepoEndsWithError_deliversServiceResponseError() {
+        let sut = makeSUT(flightsEndsWithError: false, airlinesEndsWithError: true)
+        expect(sut: sut, expectedResult: 0, expectedError: ServiceError.responseError)
+    }
+
+    func test_retrieveAllInfo_flightsRepoEndsWithError_airlinesRepoEndsWithNoError_deliversServiceResponseError() {
+        let sut = makeSUT(flightsEndsWithError: true, airlinesEndsWithError: false)
+        expect(sut: sut, expectedResult: 0, expectedError: ServiceError.responseError)
+    }
+    
+    //MARK: - Decoding testing
+    func test_retrieveAllInfo_flightMappingError_deliversServiceDecodingError() {
+        let sut = makeSUT(flightsReturnsMappingError: true)
         expect(sut: sut, expectedResult: 0, expectedError: ServiceError.decodingData)
     }
 
+    func test_retrieveAllInfo_airlineMappingError_deliversServiceDecodingError() {
+        let sut = makeSUT(airlinesReturnsMappingError: true)
+        expect(sut: sut, expectedResult: 0, expectedError: ServiceError.decodingData)
+    }
 }
 
 extension FlightsTests {
-    private func makeSUT(endsWithError: Bool = false) -> FlightsUseCase {
-        return DefaultFlightsUseCase(flightsListRepo: MockFlightsRepository(endsWithError: endsWithError), airlinesListRepo: MockAirlinesRepository())
-    }
+    private func makeSUT(flightsEndsWithError: Bool = false,
+                         flightsReturnsMappingError: Bool = false,
+                         airlinesEndsWithError: Bool = false,
+                         airlinesReturnsMappingError: Bool = false) -> FlightsUseCase {
+        
+        return DefaultFlightsUseCase(dependencies:
+                                        MockFlightsUseCaseDependencies(
+                                            flightsEndsWithError: flightsEndsWithError,
+                                            flightReturnsMappingError: flightsReturnsMappingError,
+                                            airlinesEndsWithError: airlinesEndsWithError,
+                                            airlinesReturnsMappingError: airlinesReturnsMappingError))
+        }
     
     private func expect(sut: FlightsUseCase, expectedResult: Int? = 0, expectedError: ServiceError? = nil, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Waiting for info")
@@ -41,8 +79,8 @@ extension FlightsTests {
                 receivedResult = 0
                 receivedError = error as? ServiceError
             }
-            XCTAssertEqual(receivedResult, expectedResult, "Expected flights: \(expectedResult), but got \(receivedResult) instead", file: file, line: line)
-            XCTAssertEqual(receivedError, expectedError, "Expected error: \(receivedError), but got \(expectedError) instead", file: file, line: line)
+            XCTAssertEqual(receivedResult, expectedResult, "Expected flights: \(String(describing: expectedResult)), but got \(receivedResult) instead", file: file, line: line)
+            XCTAssertEqual(receivedError, expectedError, "Expected error: \(String(describing: receivedError)), but got \(String(describing: expectedError)) instead", file: file, line: line)
 
             exp.fulfill()
         }.disposed(by: DisposeBag())

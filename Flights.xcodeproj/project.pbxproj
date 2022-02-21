@@ -20,6 +20,7 @@
 		A8356A2227C3B08A007C3D96 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2127C3B08A007C3D96 /* EndPoints.swift */; };
 		A8356A2527C3B1FB007C3D96 /* MockFlightsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */; };
 		A8356A2727C3B207007C3D96 /* MockAirlinesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */; };
+		A8356A2927C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2827C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		A8356A2127C3B08A007C3D96 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightsRepository.swift; sourceTree = "<group>"; };
 		A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAirlinesRepository.swift; sourceTree = "<group>"; };
+		A8356A2827C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightsUseCaseDependencies.swift; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		A8356A2327C3B1EB007C3D96 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				A8356A2827C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift */,
 				A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */,
 				A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */,
 			);
@@ -797,6 +800,7 @@
 			files = (
 				A8C6E55127C1019900E573AC /* FlightsTests.swift in Sources */,
 				A8356A2727C3B207007C3D96 /* MockAirlinesRepository.swift in Sources */,
+				A8356A2927C3E5C0007C3D96 /* MockFlightsUseCaseDependencies.swift in Sources */,
 				A8356A2527C3B1FB007C3D96 /* MockFlightsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
