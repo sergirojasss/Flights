@@ -31,7 +31,11 @@ extension InboundPresenter: InboundPresenterProtocol {
                 guard let self = self else { return }
                 switch event {
                 case .success(let flightModel):
-                    self.view.reloadFlights(with: flightModel)
+                    if flightModel.isEmpty {
+                        self.view.showEmptyState()
+                    } else {
+                        self.view.reloadFlights(with: flightModel)
+                    }
                 default:
                     break
                 }

@@ -24,6 +24,8 @@ extension InboundViewController {
         static let errorDescription = "Ha ocurrido un error"
         static let errorOK = "Ok"
         static let emptyString = ""
+        static let emptyTitle = "No matching flights"
+        static let emptyDescription = "Try another outbound flight"
     }
     
 }
@@ -138,6 +140,17 @@ extension InboundViewController: InboundViewProtocol {
         alertView.addAction(okAction)
         present(alertView, animated: true, completion: nil)
     }
+    
+    func showEmptyState() {
+        let alertView = UIAlertController(title: Strings.emptyTitle, message: Strings.emptyDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Strings.errorOK, style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+        })
+        alertView.addAction(okAction)
+        present(alertView, animated: true, completion: nil)
+    }
+
 }
 
 extension InboundViewController {

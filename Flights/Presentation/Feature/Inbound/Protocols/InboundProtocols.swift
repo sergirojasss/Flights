@@ -11,6 +11,7 @@ protocol InboundViewProtocol {
     func reloadFlights(with model: [FlightModel])
     func showError(_ error: ServiceError)
     func showTotalPrice(_ totalPrice: String)
+    func showEmptyState()
 }
 
 protocol InboundRouterProtocol {
