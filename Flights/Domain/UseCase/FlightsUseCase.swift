@@ -14,7 +14,7 @@ enum orderFlightsPrice {
 }
 
 protocol FlightsUseCase {
-    func loadAllInfo() -> Single<([FlightEntityWithLogo])>
+    func getOutboundFlights() -> Single<([FlightEntityWithLogo])>
     func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo]
     func getFlight(for id: Int) -> FlightEntityWithLogo?
 }
@@ -47,17 +47,12 @@ final class DefaultFlightsUseCase: FlightsUseCase {
     }
     
     //MARK: - Public methods
-    func loadAllInfo() -> Single<([FlightEntityWithLogo])> {
-        return Single.zip(getFlights(orderBy: .asc),
-                          getAirlines())
-            .observe(on: MainScheduler.instance)
-            .flatMap{ model in
-                self.airlines = model.1 ?? []
-                self.flights = self.getEveryFlightWithLogo(flights: model.0)
-                return .just(self.flights)
-            }.catch { error in
-                return .error(error)
-            }
+    func getOutboundFlights() -> Single<([FlightEntityWithLogo])> {
+        loadAllInfo().flatMap{ model in
+            return .just(model.filter({ flightEntityWithLogo in
+                flightEntityWithLogo.type == .outbound
+            }))
+        }
     }
     
     func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo] {
@@ -79,6 +74,20 @@ final class DefaultFlightsUseCase: FlightsUseCase {
 
 //MARK: - Private methods
 extension DefaultFlightsUseCase {
+    private func loadAllInfo() -> Single<([FlightEntityWithLogo])> {
+        return Single.zip(getFlights(orderBy: .asc),
+                          getAirlines())
+            .observe(on: MainScheduler.instance)
+            .flatMap{ model in
+                self.airlines = model.1 ?? []
+                self.flights = self.getEveryFlightWithLogo(flights: model.0)
+                return .just(self.flights)
+            }.catch { error in
+                return .error(error)
+            }
+    }
+    
+
     private func getAirlines() -> Single<[AirlineEntity]?> {
         dependencies.airlinesListRepo.airlines()
     }

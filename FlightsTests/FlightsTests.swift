@@ -18,9 +18,9 @@ import RxSwift
 
 
 class FlightsTests: XCTestCase {
-    func test_retrieveAllInfo_returns11Flights() {
+    func test_retrieveAllInfo_returns6Flights() {
         let sut = makeSUT()
-        expect(sut: sut, expectedResult: 11)
+        expect(sut: sut, expectedResult: 6)
     }
 
     //MARK: - responseError testing
@@ -71,7 +71,7 @@ extension FlightsTests {
         var receivedError: ServiceError? = nil
         
         
-        sut.loadAllInfo().subscribe { event in
+        sut.getOutboundFlights().subscribe { event in
             switch event {
             case .success(let model):
                 receivedResult = model.count
