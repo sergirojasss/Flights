@@ -13,8 +13,7 @@ final class DefaultAirlinesRepository: AirlinesRepository {
     func airlines() -> Single<[AirlineEntity]?> {
         
         return Single.create { single -> Disposable in
-            //TODO: Magic numbers
-            let url = "https://run.mocky.io/v3/786dab92-69c6-4ebd-a447-05e0f3d4cc05"
+            let url = EndPoints.airlines
             
             AF.request(url).response { response in
                 switch response.data {

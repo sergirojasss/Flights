@@ -14,8 +14,7 @@ final class DefaultFlightsRepository: FlightsRepository {
     func flightsList() -> Single<[FlightEntity]> {
         
         return Single.create { single -> Disposable in
-            //TODO: Magic numbers
-            let url = "https://run.mocky.io/v3/9ae53461-9882-4663-a0f9-919ed6641a75"
+            let url = EndPoints.flights
             
             AF.request(url).response { response in
                 switch response.data {

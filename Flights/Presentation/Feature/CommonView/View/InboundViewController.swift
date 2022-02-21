@@ -112,7 +112,6 @@ extension InboundViewController: InboundViewProtocol {
     func showTotalPrice(_ totalPrice: String) {
         let alertView = UIAlertController(title: Strings.price, message: totalPrice, preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: Strings.errorOK, style: .default, handler: { _ in
-            //TODO: Retry button
             self.dismiss(animated: true, completion: nil)
         })
         alertView.addAction(okAction)
