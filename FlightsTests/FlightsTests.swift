@@ -6,28 +6,47 @@
 //
 
 import XCTest
+import RxSwift
 @testable import Flights
 
 class FlightsTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_retrieveAllInfo_returns11Flights() {
+        let sut = makeSUT()
+        expect(sut: sut, expectedResult: 11)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_retrieveAllInfo_returnsError() {
+        let sut = makeSUT(endsWithError: true)
+        expect(sut: sut, expectedResult: 0, expectedError: ServiceError.decodingData)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+extension FlightsTests {
+    private func makeSUT(endsWithError: Bool = false) -> FlightsUseCase {
+        return DefaultFlightsUseCase(flightsListRepo: MockFlightsRepository(endsWithError: endsWithError), airlinesListRepo: MockAirlinesRepository())
     }
+    
+    private func expect(sut: FlightsUseCase, expectedResult: Int? = 0, expectedError: ServiceError? = nil, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Waiting for info")
+        var receivedResult: Int = 0
+        var receivedError: ServiceError? = nil
+        
+        
+        sut.loadAllInfo().subscribe { event in
+            switch event {
+            case .success(let model):
+                receivedResult = model.count
+            case .failure(let error):
+                receivedResult = 0
+                receivedError = error as? ServiceError
+            }
+            XCTAssertEqual(receivedResult, expectedResult, "Expected flights: \(expectedResult), but got \(receivedResult) instead", file: file, line: line)
+            XCTAssertEqual(receivedError, expectedError, "Expected error: \(receivedError), but got \(expectedError) instead", file: file, line: line)
 
+            exp.fulfill()
+        }.disposed(by: DisposeBag())
+        
+        wait(for: [exp], timeout: 1.0)
+    }
 }

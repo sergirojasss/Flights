@@ -18,6 +18,8 @@
 		A8356A1427C27259007C3D96 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A1327C27259007C3D96 /* ViewType.swift */; };
 		A8356A1627C27523007C3D96 /* CellTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A1527C27523007C3D96 /* CellTypes.swift */; };
 		A8356A2227C3B08A007C3D96 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2127C3B08A007C3D96 /* EndPoints.swift */; };
+		A8356A2527C3B1FB007C3D96 /* MockFlightsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */; };
+		A8356A2727C3B207007C3D96 /* MockAirlinesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */; };
 		A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53927C1019700E573AC /* AppDelegate.swift */; };
 		A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E53B27C1019700E573AC /* SceneDelegate.swift */; };
 		A8C6E54327C1019900E573AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C6E54227C1019900E573AC /* Assets.xcassets */; };
@@ -89,6 +91,8 @@
 		A8356A1327C27259007C3D96 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		A8356A1527C27523007C3D96 /* CellTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypes.swift; sourceTree = "<group>"; };
 		A8356A2127C3B08A007C3D96 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightsRepository.swift; sourceTree = "<group>"; };
+		A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAirlinesRepository.swift; sourceTree = "<group>"; };
 		A8C6E53627C1019700E573AC /* Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E53927C1019700E573AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C6E53B27C1019700E573AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +236,15 @@
 			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
+		A8356A2327C3B1EB007C3D96 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A8356A2427C3B1FB007C3D96 /* MockFlightsRepository.swift */,
+				A8356A2627C3B207007C3D96 /* MockAirlinesRepository.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		A8C6E52D27C1019700E573AC = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +286,7 @@
 		A8C6E54F27C1019900E573AC /* FlightsTests */ = {
 			isa = PBXGroup;
 			children = (
+				A8356A2327C3B1EB007C3D96 /* Mocks */,
 				A8C6E55027C1019900E573AC /* FlightsTests.swift */,
 			);
 			path = FlightsTests;
@@ -782,6 +796,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8C6E55127C1019900E573AC /* FlightsTests.swift in Sources */,
+				A8356A2727C3B207007C3D96 /* MockAirlinesRepository.swift in Sources */,
+				A8356A2527C3B1FB007C3D96 /* MockFlightsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
