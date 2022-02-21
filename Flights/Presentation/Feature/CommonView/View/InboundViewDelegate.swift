@@ -30,6 +30,10 @@ final class InboundViewDelegate: NSObject, UITableViewDelegate {
             if let cell = tableView.cellForRow(at: indexPath) as? FlightCell {
                 view?.presenter?.goToInboundFlights(outboundModelId: cell.getId())
             }
+        } else {
+            if let cell = tableView.cellForRow(at: indexPath) as? FlightCell {
+                view?.inboundPresenter?.showTotalPrice(inboundId: cell.getId())
+            }
         }
     }
 }

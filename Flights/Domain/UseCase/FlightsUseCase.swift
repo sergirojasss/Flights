@@ -39,8 +39,8 @@ final class DefaultFlightsUseCase: FlightsUseCase {
                           getAirlines())
             .observe(on: MainScheduler.instance)
             .flatMap{ model in
-                self.flights = self.getEveryFlightWithLogo(flights: model.0)
                 self.airlines = model.1 ?? []
+                self.flights = self.getEveryFlightWithLogo(flights: model.0)
                 return .just(self.flights)
             }.catch { error in
                 return .error(error)

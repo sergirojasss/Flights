@@ -32,6 +32,14 @@ final class InboundInteractor {
 }
 
 extension InboundInteractor: InboundInteractorProtocol {
+    func getTotalPrice(inboundId: Int) -> Float? {
+        if let outbound = dependencies.flightsUseCase.getFlight(for: outbundFlightId),
+           let inbound = dependencies.flightsUseCase.getFlight(for: inboundId) {
+            return outbound.price + inbound.price
+        }
+        return nil
+    }
+    
     func getMatchingFlights() -> Single<[FlightModel]> {
         return .just(dependencies.flightsUseCase.getInboundFlights(for: outbundFlightId).map{FlightModel(from: $0)})
     }

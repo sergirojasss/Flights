@@ -36,7 +36,6 @@
 		A8C6E58527C1080000E573AC /* FlightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58427C1080000E573AC /* FlightEntity.swift */; };
 		A8C6E58727C1080900E573AC /* AirlineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58627C1080900E573AC /* AirlineEntity.swift */; };
 		A8C6E58927C10A3E00E573AC /* FlightsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */; };
-		A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */; };
 		A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5C827C1B50300E573AC /* RealmManager.swift */; };
 		A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */; };
 		A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */; };
@@ -111,7 +110,6 @@
 		A8C6E58427C1080000E573AC /* FlightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightEntity.swift; sourceTree = "<group>"; };
 		A8C6E58627C1080900E573AC /* AirlineEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineEntity.swift; sourceTree = "<group>"; };
 		A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUseCase.swift; sourceTree = "<group>"; };
-		A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUseCase.swift; sourceTree = "<group>"; };
 		A8C6E5C827C1B50300E573AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRealm.swift; sourceTree = "<group>"; };
 		A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRealm.swift; sourceTree = "<group>"; };
@@ -341,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				A8C6E58827C10A3E00E573AC /* FlightsUseCase.swift */,
-				A8C6E58A27C10A4700E573AC /* AirlinesUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -736,7 +733,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8C6E5E127C238AE00E573AC /* OutboundRouter.swift in Sources */,
-				A8C6E58B27C10A4700E573AC /* AirlinesUseCase.swift in Sources */,
 				A8356A0F27C27200007C3D96 /* InboundInteractor.swift in Sources */,
 				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
 				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,

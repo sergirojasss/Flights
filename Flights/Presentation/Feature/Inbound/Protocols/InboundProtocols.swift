@@ -10,6 +10,7 @@ import RxSwift
 protocol InboundViewProtocol {
     func reloadFlights(with model: [FlightModel])
     func showError(_ error: ServiceError)
+    func showTotalPrice(_ totalPrice: String)
 }
 
 protocol InboundRouterProtocol {
@@ -17,8 +18,10 @@ protocol InboundRouterProtocol {
 
 protocol InboundInteractorProtocol {
     func getMatchingFlights() -> Single<[FlightModel]>
+    func getTotalPrice(inboundId: Int) -> Float? 
 }
 
 protocol InboundPresenterProtocol {
     func viewDidload()
+    func showTotalPrice(inboundId: Int)
 }

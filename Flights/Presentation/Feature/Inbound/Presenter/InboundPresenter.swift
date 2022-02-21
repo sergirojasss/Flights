@@ -10,7 +10,7 @@ import RxSwift
 
 final class InboundPresenter {
     private let disposeBag = DisposeBag()
-
+    
     let router: InboundRouterProtocol
     let interactor: InboundInteractorProtocol
     var view: InboundViewProtocol!
@@ -23,6 +23,7 @@ final class InboundPresenter {
 }
 
 extension InboundPresenter: InboundPresenterProtocol {
+    
     func viewDidload() {
         interactor.getMatchingFlights()
             .observe(on: MainScheduler.instance)
@@ -31,9 +32,18 @@ extension InboundPresenter: InboundPresenterProtocol {
                 switch event {
                 case .success(let flightModel):
                     self.view.reloadFlights(with: flightModel)
-                case .failure(let error):
+                default:
                     break
                 }
             }
-    }    
+    }
+    
+    func showTotalPrice(inboundId: Int) {
+        if let price = interactor.getTotalPrice(inboundId: inboundId) {
+            view.showTotalPrice("\(price) €")
+        } else {
+            view.showTotalPrice("Error")
+        }
+    }
+
 }
