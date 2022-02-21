@@ -16,12 +16,6 @@ extension InboundViewController {
         static let barTintColor = UIColor.red
     }
 
-    private enum Images {
-        static let searchImage = UIImage(systemName: "magnifyingglass")
-        static let sortImageDown = UIImage(systemName: "chevron.down.circle")
-        static let sortImageUp = UIImage(systemName: "chevron.up.circle")
-    }
-
     private enum Strings {
         static let outboundTitle = "Outbound"
         static let inboundTtitle = "Inbound"
@@ -30,6 +24,7 @@ extension InboundViewController {
         static let errorOK = "Ok"
         static let emptyString = ""
     }
+    
 }
 
 final class InboundViewController: UIViewController {
@@ -83,8 +78,8 @@ final class InboundViewController: UIViewController {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.alwaysBounceVertical = false
+        tableView.estimatedRowHeight = 500.0
 
         dataSource.registerCells()
     }
@@ -125,6 +120,8 @@ extension InboundViewController: InboundViewProtocol {
             dataSource.datasource = inboundPresenter?.inbound.map{ CellTypes.flightCell(model: FlightCellModel(from: $0, and: inboundPresenter?.getAirline(for: $0.airline))) }
         }
         tableView.reloadData()
+        //TODO: Select first
+//        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
     }
 }
 

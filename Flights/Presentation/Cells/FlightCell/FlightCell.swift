@@ -21,9 +21,8 @@ final class FlightCell: UITableViewCell, ReusableCell {
         let containerView = UIView(frame: .zero)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = .gray
+        containerView.backgroundColor = .gray.withAlphaComponent(0.2)
         containerView.layer.cornerRadius = Constants.cornerRadius
-
         return containerView
     }()
 
@@ -35,6 +34,17 @@ final class FlightCell: UITableViewCell, ReusableCell {
         airlineLogo.clipsToBounds = true
         airlineLogo.layer.cornerRadius = Constants.cornerRadius
         return airlineLogo
+    }()
+    
+    var planeImage: UIImageView = {
+        let planeImage = UIImageView(frame: .zero)
+        planeImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        planeImage.contentMode = Constants.contentMode
+        planeImage.clipsToBounds = true
+        planeImage.layer.cornerRadius = Constants.cornerRadius
+        planeImage.image = UIImage(named: "airplane")
+        return planeImage
     }()
     
     var airline: UILabel = {
@@ -67,10 +77,12 @@ final class FlightCell: UITableViewCell, ReusableCell {
 
     private func setupView() {
         contentView.addSubview(containerView)
+        containerView.addSubview(departure)
+        containerView.addSubview(planeImage)
+        containerView.addSubview(arrival)
         containerView.addSubview(airlineLogo)
         containerView.addSubview(airline)
-        containerView.addSubview(departure)
-        containerView.addSubview(arrival)
+
         containerView.addSubview(price)
         setupConstraints()
     }
@@ -102,7 +114,8 @@ extension FlightCell {
     private enum Constraints {
         static let leadingWithContentView = 20.0
         static let trailingWithContentView = 20.0
-        static let spacingLabels = 5.0
+        static let topWithContentView = 20.0
+        static let spacingLabels = 10.0
         static let spacingCells = 5.0
         static let logoHeight = 50.0
         static let logoWidth = 50.0
@@ -110,35 +123,36 @@ extension FlightCell {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Constraints.spacingCells),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constraints.leadingWithContentView),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constraints.trailingWithContentView),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constraints.spacingCells),
             
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constraints.spacingCells),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constraints.leadingWithContentView),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.trailingWithContentView),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
+            departure.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
+            departure.heightAnchor.constraint(equalToConstant: 20.5),
+            departure.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
+            departure.trailingAnchor.constraint(equalTo: planeImage.leadingAnchor, constant: -Constraints.spacingLabels),
+            departure.bottomAnchor.constraint(lessThanOrEqualTo: airlineLogo.topAnchor),
             
-            airline.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.spacingLabels),
-            airline.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
+            planeImage.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
+            planeImage.trailingAnchor.constraint(equalTo: arrival.leadingAnchor, constant: -Constraints.spacingLabels),
+            planeImage.widthAnchor.constraint(equalToConstant: 15.0),
+            planeImage.heightAnchor.constraint(equalToConstant: 15.0),
             
-            departure.topAnchor.constraint(equalTo: airline.bottomAnchor, constant: Constraints.spacingLabels),
-            departure.leadingAnchor.constraint(equalTo: airline.leadingAnchor),
-            departure.trailingAnchor.constraint(equalTo: airline.trailingAnchor),
-
-            arrival.topAnchor.constraint(equalTo: departure.bottomAnchor, constant: Constraints.spacingLabels),
-            arrival.leadingAnchor.constraint(equalTo: airline.leadingAnchor),
-            arrival.trailingAnchor.constraint(equalTo: airline.trailingAnchor),
-
-            price.topAnchor.constraint(equalTo: arrival.bottomAnchor, constant: Constraints.spacingLabels),
-            price.leadingAnchor.constraint(equalTo: airline.leadingAnchor),
-            price.trailingAnchor.constraint(equalTo: airline.trailingAnchor),
-            price.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor),
+            arrival.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
             
-            airlineLogo.topAnchor.constraint(equalTo: airline.topAnchor),
-            airlineLogo.leadingAnchor.constraint(greaterThanOrEqualTo: airline.trailingAnchor),
-            airlineLogo.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.spacingCells),
-            airlineLogo.widthAnchor.constraint(equalToConstant: Constraints.logoWidth),
-            airlineLogo.heightAnchor.constraint(equalToConstant: Constraints.logoHeight),
+            airlineLogo.leadingAnchor.constraint(equalTo: departure.leadingAnchor),
+            airlineLogo.heightAnchor.constraint(equalToConstant: 25.0),
+            airlineLogo.widthAnchor.constraint(equalToConstant: 25.0),
+            airlineLogo.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constraints.spacingLabels),
             
-            contentView.heightAnchor.constraint(equalToConstant: 150)
+            airline.centerYAnchor.constraint(equalTo: airlineLogo.centerYAnchor),
+            airline.leadingAnchor.constraint(equalTo: airlineLogo.trailingAnchor, constant: Constraints.spacingLabels),
+            
+            price.leadingAnchor.constraint(greaterThanOrEqualTo: arrival.trailingAnchor, constant: Constraints.spacingLabels),
+            price.leadingAnchor.constraint(greaterThanOrEqualTo: airline.trailingAnchor, constant: Constraints.spacingLabels),
+            price.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constraints.trailingWithContentView),
+            price.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
         ])
     }
 

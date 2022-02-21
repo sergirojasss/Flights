@@ -40,6 +40,7 @@ final class InboundViewDatasource: NSObject, UITableViewDataSource {
         case .flightCell(let model):
             let cell: FlightCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(model: model)
+            cell.selectionStyle = .none
             return cell
         default:
             return UITableViewCell()
