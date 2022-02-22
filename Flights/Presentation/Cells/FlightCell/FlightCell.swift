@@ -160,12 +160,13 @@ extension FlightCell {
         static let topWithContentView = 20.0
         static let spacingLabels = 10.0
         static let spacingCells = 5.0
-        static let logoHeight = 50.0
-        static let logoWidth = 50.0
+        static let labelHeight = 20.5
+        static let logoSize = 25.0
+        static let imgSize = 25.0
+        static let separatorHeight = 2.0
     }
 
     private func setupConstraints() {
-        //TODO: Magic numbers
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constraints.spacingCells),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constraints.leadingWithContentView),
@@ -173,7 +174,7 @@ extension FlightCell {
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
             
             departure.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
-            departure.heightAnchor.constraint(equalToConstant: 20.5),
+            departure.heightAnchor.constraint(equalToConstant: Constraints.labelHeight),
             departure.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
             departure.trailingAnchor.constraint(equalTo: planeImage.leadingAnchor, constant: -Constraints.spacingLabels),
             departure.bottomAnchor.constraint(equalTo: airlineLogo.topAnchor, constant: -Constraints.topWithContentView),
@@ -181,15 +182,15 @@ extension FlightCell {
             planeImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
             planeImage.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
             planeImage.trailingAnchor.constraint(equalTo: arrival.leadingAnchor, constant: -Constraints.spacingLabels),
-            planeImage.widthAnchor.constraint(equalToConstant: 15.0),
-            planeImage.heightAnchor.constraint(equalToConstant: 15.0),
+            planeImage.widthAnchor.constraint(equalToConstant: Constraints.imgSize),
+            planeImage.heightAnchor.constraint(equalToConstant: Constraints.imgSize),
             
             arrival.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
             arrival.centerYAnchor.constraint(equalTo: departure.centerYAnchor),
             
             airlineLogo.leadingAnchor.constraint(equalTo: departure.leadingAnchor),
-            airlineLogo.heightAnchor.constraint(equalToConstant: 25.0),
-            airlineLogo.widthAnchor.constraint(equalToConstant: 25.0),
+            airlineLogo.heightAnchor.constraint(equalToConstant: Constraints.logoSize),
+            airlineLogo.widthAnchor.constraint(equalToConstant: Constraints.logoSize),
             
             airline.centerYAnchor.constraint(equalTo: airlineLogo.centerYAnchor),
             airline.leadingAnchor.constraint(equalTo: airlineLogo.trailingAnchor, constant: Constraints.spacingLabels),
@@ -203,7 +204,7 @@ extension FlightCell {
             separatorView.topAnchor.constraint(equalTo: airlineLogo.bottomAnchor, constant: Constraints.topWithContentView),
             separatorView.leadingAnchor.constraint(equalTo: airlineLogo.leadingAnchor),
             separatorView.trailingAnchor.constraint(equalTo: price.trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 2.0),
+            separatorView.heightAnchor.constraint(equalToConstant: Constraints.separatorHeight),
             
             airlineHeadline.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: Constraints.topWithContentView),
             airlineHeadline.leadingAnchor.constraint(equalTo: separatorView.leadingAnchor),
