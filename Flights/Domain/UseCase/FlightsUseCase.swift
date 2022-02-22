@@ -48,7 +48,7 @@ final class DefaultFlightsUseCase: FlightsUseCase {
     
     //MARK: - Public methods
     func getOutboundFlights() -> Single<([FlightEntityWithLogo])> {
-        loadAllInfo().flatMap{ model in
+        fetchAllData().flatMap{ model in
             return .just(model.filter({ flightEntityWithLogo in
                 flightEntityWithLogo.type == .outbound
             }))
@@ -76,7 +76,7 @@ final class DefaultFlightsUseCase: FlightsUseCase {
 
 //MARK: - Private methods
 extension DefaultFlightsUseCase {
-    private func loadAllInfo() -> Single<([FlightEntityWithLogo])> {
+    private func fetchAllData() -> Single<([FlightEntityWithLogo])> {
         return Single.zip(getFlights(orderBy: .asc),
                           getAirlines())
             .observe(on: MainScheduler.instance)

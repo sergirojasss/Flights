@@ -34,7 +34,6 @@
 		A8C6E55127C1019900E573AC /* FlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55027C1019900E573AC /* FlightsTests.swift */; };
 		A8C6E55B27C1019900E573AC /* FlightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55A27C1019900E573AC /* FlightsUITests.swift */; };
 		A8C6E55D27C1019900E573AC /* FlightsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E55C27C1019900E573AC /* FlightsUITestsLaunchTests.swift */; };
-		A8C6E56B27C102AB00E573AC /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E56A27C102AB00E573AC /* Box.swift */; };
 		A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */; };
 		A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57127C1030A00E573AC /* FlightsRepository.swift */; };
 		A8C6E57427C1031F00E573AC /* AirlinesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */; };
@@ -118,7 +117,6 @@
 		A8C6E55627C1019900E573AC /* FlightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C6E55A27C1019900E573AC /* FlightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUITests.swift; sourceTree = "<group>"; };
 		A8C6E55C27C1019900E573AC /* FlightsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A8C6E56A27C102AB00E573AC /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+ImageView.swift"; sourceTree = "<group>"; };
 		A8C6E57127C1030A00E573AC /* FlightsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRepository.swift; sourceTree = "<group>"; };
 		A8C6E57327C1031F00E573AC /* AirlinesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRepository.swift; sourceTree = "<group>"; };
@@ -184,8 +182,8 @@
 			children = (
 				A8C6E5E527C23AAA00E573AC /* Models */,
 				A8356A0227C2718B007C3D96 /* CommonView */,
-				A8356A0127C27175007C3D96 /* Inbound */,
 				A8C6E5D227C238AE00E573AC /* Outbound */,
+				A8356A0127C27175007C3D96 /* Inbound */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -329,7 +327,6 @@
 		A8C6E56927C1029C00E573AC /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E56A27C102AB00E573AC /* Box.swift */,
 				A8C6E56C27C102C300E573AC /* Utils+ImageView.swift */,
 				A8C6E58227C1071300E573AC /* Errors.swift */,
 				A8C6E5F627C24A7300E573AC /* NibReusable.swift */,
@@ -783,7 +780,6 @@
 				A8C6E58027C103AF00E573AC /* AirlinesRepositoryProtocol.swift in Sources */,
 				A8C6E56D27C102C300E573AC /* Utils+ImageView.swift in Sources */,
 				A8356A2227C3B08A007C3D96 /* EndPoints.swift in Sources */,
-				A8C6E56B27C102AB00E573AC /* Box.swift in Sources */,
 				A8C6E5DD27C238AE00E573AC /* OutboundPresenter.swift in Sources */,
 				A8C6E58327C1071300E573AC /* Errors.swift in Sources */,
 				A8C6E57E27C103A100E573AC /* FlightsRepositoryProtocol.swift in Sources */,
