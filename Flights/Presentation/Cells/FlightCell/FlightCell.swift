@@ -161,7 +161,6 @@ extension FlightCell {
         static let topWithContentView = 20.0
         static let spacingLabels = 10.0
         static let spacingCells = 5.0
-        static let labelHeight = 20.5
         static let logoSize = 25.0
         static let imgSize = 25.0
         static let separatorHeight = 2.0
@@ -175,7 +174,6 @@ extension FlightCell {
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
             
             departure.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constraints.topWithContentView),
-            departure.heightAnchor.constraint(equalToConstant: Constraints.labelHeight),
             departure.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constraints.leadingWithContentView),
             departure.trailingAnchor.constraint(equalTo: planeImage.leadingAnchor, constant: -Constraints.spacingLabels),
             departure.bottomAnchor.constraint(equalTo: airlineLogo.topAnchor, constant: -Constraints.topWithContentView),

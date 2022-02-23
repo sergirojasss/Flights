@@ -51,7 +51,6 @@ extension ShimmerCell {
         }
         
         setupView()
-        layoutIfNeeded()
     }
 
 }

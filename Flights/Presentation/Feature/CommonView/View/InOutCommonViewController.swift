@@ -45,13 +45,7 @@ final class InOutCommonViewController: UIViewController {
     
     private lazy var dataSource: InboundViewDatasource = {
         let dataSource = InboundViewDatasource(tableView: tableView)
-        dataSource.datasource = [CellTypes.shimmer,
-                                 CellTypes.shimmer,
-                                 CellTypes.shimmer,
-                                 CellTypes.shimmer,
-                                 CellTypes.shimmer,
-                                 CellTypes.shimmer,
-                                 CellTypes.shimmer,]
+        dataSource.datasource = Constants.shimmerCells
         return dataSource
     }()
     
@@ -75,6 +69,7 @@ final class InOutCommonViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTitleNavBar()
+        setNavBarItems()
     }
     
     // MARK: - Setup view method
@@ -110,7 +105,20 @@ final class InOutCommonViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
     }
 
+    private func setNavBarItems() {
+        if viewType == .outbound {
+            let reloadBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchData))
+            reloadBtn.tintColor = Colours.barTintColor
+
+            navigationItem.rightBarButtonItems = [reloadBtn]
+        }
+    }
     
+    @objc private func fetchData() {
+        dataSource.datasource = Constants.shimmerCells
+        presenter?.viewDidload()
+    }
+
 }
 
 extension InOutCommonViewController: OutboundViewProtocol {
@@ -176,5 +184,17 @@ private extension InOutCommonViewController {
             tableView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
+    }
+}
+
+private extension InOutCommonViewController {
+    enum Constants {
+        static let shimmerCells = [CellTypes.shimmer,
+                                   CellTypes.shimmer,
+                                   CellTypes.shimmer,
+                                   CellTypes.shimmer,
+                                   CellTypes.shimmer,
+                                   CellTypes.shimmer,
+                                   CellTypes.shimmer]
     }
 }
