@@ -12,6 +12,7 @@ Pod install needed before run.
 - Bussines logic implemented on UseCase layer.
 - UnitTesting of useCase layer (almost 100% UseCase coverage)
 - Auto layout tableViews
+- No storyboards
  
 ## Patterns
 ### VIPER
