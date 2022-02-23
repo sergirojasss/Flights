@@ -24,7 +24,7 @@ final class OutboundPresenter {
 
 extension OutboundPresenter: OutboundPresenterProtocol {
     func viewDidload() {
-        interactor.loadFlightsWithLogo()
+        interactor.getOutboundFlights()
             .observe(on: MainScheduler.instance)
             .subscribe { [weak self] event in
                 guard let self = self else { return }

@@ -18,8 +18,12 @@ protocol OutboundRouterProtocol {
 }
 
 protocol OutboundInteractorProtocol {
+    /// contains the UseCase wich is passed to Inbound screen.
+    /// It's who is storing on session data.
     var dependencies: OutboundInteractorDependenciesProtocol { get }
-    func loadFlightsWithLogo() -> Single<[FlightModel]>
+    
+    /// Returns the outbound flights, mapping it to the model
+    func getOutboundFlights() -> Single<[FlightModel]>
 }
 
 protocol OutboundPresenterProtocol {

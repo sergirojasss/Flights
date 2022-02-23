@@ -8,8 +8,8 @@
 import Foundation
 
 final class OutboundServiceLocator {
-    static func provideViewController() -> InboundViewController {
-        let viewController = InboundViewController()
+    static func provideViewController() -> InOutCommonViewController {
+        let viewController = InOutCommonViewController()
         viewController.viewType = .outbound
         let router = OutboundRouter(withView: viewController)
 

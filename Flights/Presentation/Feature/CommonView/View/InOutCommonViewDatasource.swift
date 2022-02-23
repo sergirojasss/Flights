@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 final class InboundViewDatasource: NSObject, UITableViewDataSource {
+    
+    /// Cells to show on table view
+    /// - Parameter [CellTypes]?: [CellTypes.flightCell(model: FlightCellModel)] or [CellTypes.shimmerCell]
     var datasource: [CellTypes]? {
         didSet {
             tableView?.reloadData()
@@ -24,7 +27,6 @@ final class InboundViewDatasource: NSObject, UITableViewDataSource {
     func registerCells() {
         tableView?.register(cellType: FlightCell.self)
         tableView?.register(cellType: ShimmerCell.self)
-        //        tableView?.register(cellType: EmptyCell.self)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,26 +49,6 @@ final class InboundViewDatasource: NSObject, UITableViewDataSource {
             cell.configure()
             cell.selectionStyle = .none
             return cell
-        default:
-            return UITableViewCell()
-//        case .shimmer:
-//            let cell: ShimmerCell = tableView.dequeueReusableCell(for: indexPath)
-//            cell.selectionStyle = .none
-//            cell.shimmerShinnig()
-//            cell.configure()
-//            return cell
-//        case .newCell(let id, let imageURL, let date, let title, let description):
-//            let cell: MainNewCell = tableView.dequeueReusableCell(for: indexPath)
-//            let model = MainNewCellModel(id: id, imageURL: imageURL, date: date, title: title, description: description)
-//            cell.selectionStyle = .none
-//            cell.configure(model: model)
-//            return cell
-//        case .emptyCell(let title):
-//            let cell: EmptyCell = tableView.dequeueReusableCell(for: indexPath)
-//            let model = EmptyCellModel(title: title)
-//            cell.selectionStyle = .none
-//            cell.configure(model: model)
-//            return cell
         }
     }
     

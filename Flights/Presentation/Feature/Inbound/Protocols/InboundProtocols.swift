@@ -18,6 +18,7 @@ protocol InboundRouterProtocol {
 }
 
 protocol InboundInteractorProtocol {
+    /// Returns matching flights for the outbound flight ID. Outbound flight ID is not passed throught parameter because this interactor is initiated with it
     func getMatchingFlights() -> Single<[FlightModel]>
     func getTotalPrice(inboundId: Int) -> Float?
 }

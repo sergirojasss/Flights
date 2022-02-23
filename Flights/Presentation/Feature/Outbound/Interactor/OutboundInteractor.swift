@@ -25,8 +25,8 @@ final class OutboundInteractor {
     }
 }
 
-extension OutboundInteractor: OutboundInteractorProtocol {    
-    func loadFlightsWithLogo() -> Single<[FlightModel]> {
+extension OutboundInteractor: OutboundInteractorProtocol {
+    func getOutboundFlights() -> Single<[FlightModel]> {
         dependencies.flightsUseCase.getOutboundFlights()
             .observe(on: MainScheduler.instance)
             .map { (model: ([FlightEntityWithLogo])) -> [FlightModel] in

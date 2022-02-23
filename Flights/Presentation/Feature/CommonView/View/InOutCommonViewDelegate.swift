@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 final class InboundViewDelegate: NSObject, UITableViewDelegate {
-    private var view: InboundViewController?
+    private var view: InOutCommonViewController?
 
-    init(view: InboundViewController?) {
+    init(view: InOutCommonViewController?) {
         self.view = view
     }
 

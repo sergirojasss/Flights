@@ -8,9 +8,9 @@
 import UIKit
 
 final class InboundRouter {
-    weak var view: InboundViewController!
+    weak var view: InOutCommonViewController!
     
-    init(withView view: InboundViewController) {
+    init(withView view: InOutCommonViewController) {
         self.view = view
     }
 }

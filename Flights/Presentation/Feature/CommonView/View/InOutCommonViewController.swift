@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-extension InboundViewController {
+extension InOutCommonViewController {
     private enum Colours {
         static let backGroundColor = UIColor.white
         static let barTintColor = UIColor.customBlue
@@ -28,7 +28,7 @@ extension InboundViewController {
     
 }
 
-final class InboundViewController: UIViewController {
+final class InOutCommonViewController: UIViewController {
     var presenter: OutboundPresenterProtocol?
     var inboundPresenter: InboundPresenterProtocol?
     var viewType: ViewType!
@@ -95,8 +95,7 @@ final class InboundViewController: UIViewController {
     }
 
     // MARK: - Setup navigationBar methods
-
-    func setupTitleNavBar() {
+    private func setupTitleNavBar() {
         navigationItem.title = viewType == .inbound ? Strings.inboundTtitle : Strings.outboundTitle
 
         let textAttributes = [NSAttributedString.Key.foregroundColor: Colours.barTintColor]
@@ -111,13 +110,13 @@ final class InboundViewController: UIViewController {
     
 }
 
-extension InboundViewController: OutboundViewProtocol {
+extension InOutCommonViewController: OutboundViewProtocol {
     func goToOutboundFlights(outboundId: Int) {
         presenter?.goToInboundFlights(outboundModelId: outboundId)
     }
 }
 
-extension InboundViewController: InboundViewProtocol {
+extension InOutCommonViewController: InboundViewProtocol {
     func showTotalPrice(_ totalPrice: String) {
         let alertView = UIAlertController(title: Strings.price, message: totalPrice, preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: Strings.errorOK, style: .default, handler: { _ in
@@ -154,9 +153,8 @@ extension InboundViewController: InboundViewProtocol {
 
 }
 
-extension InboundViewController {
+private extension InOutCommonViewController {
     // MARK: - Constraints
-    
     func setupConstraints() {
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([

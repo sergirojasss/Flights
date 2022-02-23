@@ -49,7 +49,7 @@
 		A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */; };
 		A8C6E5CE27C1B58300E573AC /* AirlinesRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */; };
 		A8C6E5DD27C238AE00E573AC /* OutboundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D427C238AE00E573AC /* OutboundPresenter.swift */; };
-		A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D627C238AE00E573AC /* InboundViewController.swift */; };
+		A8C6E5DE27C238AE00E573AC /* InOutCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D627C238AE00E573AC /* InOutCommonViewController.swift */; };
 		A8C6E5DF27C238AE00E573AC /* OutboundProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5D827C238AE00E573AC /* OutboundProtocols.swift */; };
 		A8C6E5E027C238AE00E573AC /* OutboundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DA27C238AE00E573AC /* OutboundInteractor.swift */; };
 		A8C6E5E127C238AE00E573AC /* OutboundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5DC27C238AE00E573AC /* OutboundRouter.swift */; };
@@ -57,8 +57,8 @@
 		A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E627C23AB500E573AC /* AirlineModel.swift */; };
 		A8C6E5E927C23AC300E573AC /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5E827C23AC300E573AC /* FlightModel.swift */; };
 		A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */; };
-		A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */; };
-		A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */; };
+		A8C6E5ED27C23B7E00E573AC /* InOutCommonViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EC27C23B7E00E573AC /* InOutCommonViewDelegate.swift */; };
+		A8C6E5EF27C23B8700E573AC /* InOutCommonViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5EE27C23B8700E573AC /* InOutCommonViewDatasource.swift */; };
 		A8C6E5F227C2499200E573AC /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F127C2499200E573AC /* FlightCell.swift */; };
 		A8C6E5F527C249A800E573AC /* FlightCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F427C249A800E573AC /* FlightCellModel.swift */; };
 		A8C6E5F727C24A7300E573AC /* NibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C6E5F627C24A7300E573AC /* NibReusable.swift */; };
@@ -132,7 +132,7 @@
 		A8C6E5CB27C1B57900E573AC /* FlightsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsRealm.swift; sourceTree = "<group>"; };
 		A8C6E5CD27C1B58300E573AC /* AirlinesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesRealm.swift; sourceTree = "<group>"; };
 		A8C6E5D427C238AE00E573AC /* OutboundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundPresenter.swift; sourceTree = "<group>"; };
-		A8C6E5D627C238AE00E573AC /* InboundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundViewController.swift; sourceTree = "<group>"; };
+		A8C6E5D627C238AE00E573AC /* InOutCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOutCommonViewController.swift; sourceTree = "<group>"; };
 		A8C6E5D827C238AE00E573AC /* OutboundProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundProtocols.swift; sourceTree = "<group>"; };
 		A8C6E5DA27C238AE00E573AC /* OutboundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundInteractor.swift; sourceTree = "<group>"; };
 		A8C6E5DC27C238AE00E573AC /* OutboundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboundRouter.swift; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		A8C6E5E627C23AB500E573AC /* AirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineModel.swift; sourceTree = "<group>"; };
 		A8C6E5E827C23AC300E573AC /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		A8C6E5EA27C23AED00E573AC /* TransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportProtocol.swift; sourceTree = "<group>"; };
-		A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDelegate.swift; sourceTree = "<group>"; };
-		A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewDatasource.swift; sourceTree = "<group>"; };
+		A8C6E5EC27C23B7E00E573AC /* InOutCommonViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutCommonViewDelegate.swift; sourceTree = "<group>"; };
+		A8C6E5EE27C23B8700E573AC /* InOutCommonViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutCommonViewDatasource.swift; sourceTree = "<group>"; };
 		A8C6E5F127C2499200E573AC /* FlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
 		A8C6E5F427C249A800E573AC /* FlightCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCellModel.swift; sourceTree = "<group>"; };
 		A8C6E5F627C24A7300E573AC /* NibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusable.swift; sourceTree = "<group>"; };
@@ -445,9 +445,9 @@
 		A8C6E5D527C238AE00E573AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A8C6E5D627C238AE00E573AC /* InboundViewController.swift */,
-				A8C6E5EC27C23B7E00E573AC /* InboundViewDelegate.swift */,
-				A8C6E5EE27C23B8700E573AC /* InboundViewDatasource.swift */,
+				A8C6E5D627C238AE00E573AC /* InOutCommonViewController.swift */,
+				A8C6E5EC27C23B7E00E573AC /* InOutCommonViewDelegate.swift */,
+				A8C6E5EE27C23B8700E573AC /* InOutCommonViewDatasource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -790,11 +790,11 @@
 				A8356A1127C27207007C3D96 /* InboundRouter.swift in Sources */,
 				A8C6E5CC27C1B57900E573AC /* FlightsRealm.swift in Sources */,
 				A8C6E57927C1034700E573AC /* Airline+Decodable.swift in Sources */,
-				A8C6E5DE27C238AE00E573AC /* InboundViewController.swift in Sources */,
+				A8C6E5DE27C238AE00E573AC /* InOutCommonViewController.swift in Sources */,
 				A8C6E53A27C1019700E573AC /* AppDelegate.swift in Sources */,
 				A8C6E5C927C1B50300E573AC /* RealmManager.swift in Sources */,
 				A8C6E5E727C23AB500E573AC /* AirlineModel.swift in Sources */,
-				A8C6E5EF27C23B8700E573AC /* InboundViewDatasource.swift in Sources */,
+				A8C6E5EF27C23B8700E573AC /* InOutCommonViewDatasource.swift in Sources */,
 				A8356A3B27C45555007C3D96 /* UIFont+Extension.swift in Sources */,
 				A8356A3927C454B6007C3D96 /* UIColor+Extension.swift in Sources */,
 				A8C6E57727C1033B00E573AC /* Flight+Decodable.swift in Sources */,
@@ -804,7 +804,7 @@
 				A8C6E53C27C1019700E573AC /* SceneDelegate.swift in Sources */,
 				A8C6E5EB27C23AED00E573AC /* TransportProtocol.swift in Sources */,
 				A8C6E5E427C238ED00E573AC /* OutboundServiceLocator.swift in Sources */,
-				A8C6E5ED27C23B7E00E573AC /* InboundViewDelegate.swift in Sources */,
+				A8C6E5ED27C23B7E00E573AC /* InOutCommonViewDelegate.swift in Sources */,
 				A8C6E5F727C24A7300E573AC /* NibReusable.swift in Sources */,
 				A8C6E57227C1030A00E573AC /* FlightsRepository.swift in Sources */,
 				A8356A1427C27259007C3D96 /* ViewType.swift in Sources */,

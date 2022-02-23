@@ -14,8 +14,16 @@ enum orderFlightsPrice {
 }
 
 protocol FlightsUseCase {
+    /// Fetches all needed data for the app and returns the outbound flights
     func getOutboundFlights() -> Single<([FlightEntityWithLogo])>
+    
+    /// Given an outbound flight ID, returns the combinable inbound flights
+    /// - Parameter outboundFlightId: Id of the outbound flight
     func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo]
+    
+    /// Given an outbound flight ID, and an inbound flight ID, returns the sum of both flight prices
+    /// - Parameter outboundFlightId: Id of the outbound flight
+    /// - Parameter inboundId: Id of the outbound flight
     func getTotalPrice(outboundId: Int, inboundId: Int) -> Float?
 }
 

@@ -9,8 +9,8 @@ import Foundation
 
 final class InboundServiceLocator {
     static func provideViewController(outbundFlightId: Int,
-                                      useCase: FlightsUseCase) -> InboundViewController {
-        let viewController = InboundViewController()
+                                      useCase: FlightsUseCase) -> InOutCommonViewController {
+        let viewController = InOutCommonViewController()
         viewController.viewType = .inbound
         let router = InboundRouter(withView: viewController)
 

@@ -29,9 +29,9 @@ extension FlightCell {
 }
 
 final class FlightCell: UITableViewCell, ReusableCell {
-    var model: FlightCellModel?
+    private var model: FlightCellModel?
     
-    var containerView: UIView = {
+    private var containerView: UIView = {
         let containerView = UIView(frame: .zero)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -40,7 +40,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return containerView
     }()
 
-    var separatorView: UIView = {
+    private var separatorView: UIView = {
         let containerView = UIView(frame: .zero)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -49,7 +49,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return containerView
     }()
 
-    var airlineLogo: UIImageView = {
+    private var airlineLogo: UIImageView = {
         let airlineLogo = UIImageView(frame: .zero)
         airlineLogo.translatesAutoresizingMaskIntoConstraints = false
         
@@ -59,7 +59,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return airlineLogo
     }()
     
-    var planeImage: UIImageView = {
+    private var planeImage: UIImageView = {
         let planeImage = UIImageView(frame: .zero)
         planeImage.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,7 +70,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return planeImage
     }()
     
-    var airline: UILabel = {
+    private var airline: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,7 +79,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return label
     }()
 
-    var airlineHeadline: UILabel = {
+    private var airlineHeadline: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,7 +89,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return label
     }()
 
-    var departure: UILabel = {
+    private var departure: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -98,7 +98,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return label
     }()
 
-    var arrival: UILabel = {
+    private var arrival: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -107,7 +107,7 @@ final class FlightCell: UITableViewCell, ReusableCell {
         return label
     }()
     
-    var price: UILabel = {
+    private var price: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -137,6 +137,8 @@ extension FlightCell {
         return model?.id ?? -1
     }
 
+    /// Public method to print cell
+    /// - Parameter model: FlightCellModel
     func configure(model: FlightCellModel) {
         self.model = model
         airline.text = model.airlineName
@@ -150,7 +152,6 @@ extension FlightCell {
 
         self.setupView()
     }
-
 }
 
 extension FlightCell {

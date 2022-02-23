@@ -25,7 +25,7 @@ extension ShimmerCell {
 
 final class ShimmerCell: UITableViewCell, ReusableCell {
 
-    var containerView: UIView = {
+    private var containerView: UIView = {
         let containerView = UIView(frame: .zero)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
