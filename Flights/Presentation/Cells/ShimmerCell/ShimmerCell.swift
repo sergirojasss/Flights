@@ -70,7 +70,7 @@ extension ShimmerCell {
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constraints.trailingWithContentView),
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constraints.spacingCells),
             
-            containerView.heightAnchor.constraint(equalToConstant: 220.0)
+            containerView.heightAnchor.constraint(equalToConstant: 170.0)
         ])
     }
 

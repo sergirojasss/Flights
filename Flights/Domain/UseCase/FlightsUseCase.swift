@@ -64,7 +64,7 @@ final class DefaultFlightsUseCase: FlightsUseCase {
     }
     
     func getInboundFlights(for outboundFlightId: Int) -> [FlightEntityWithLogo] {
-        guard let flightWLogo = getFlightWithLogo(flightId: outboundFlightId) else { return [] }
+        guard let flightWLogo = getFlight(for: outboundFlightId) else { return [] }
         let inbounds = flights.filter({ flightEntity in
             flightEntity.type == .inbound
         })
@@ -109,7 +109,7 @@ extension DefaultFlightsUseCase {
     }
     
     private func getFlight(for id: Int) -> FlightEntityWithLogo? {
-        getFlightWithLogo(flightId: id)
+        return flights.first(where: { $0.id == id })
     }
     
     private func getEveryFlightWithLogo(flights: [FlightEntity]) -> [FlightEntityWithLogo] {
@@ -126,13 +126,6 @@ extension DefaultFlightsUseCase {
             }
         }
         return flightsWithLogo
-    }
-    
-    private func getFlightWithLogo(flightId: Int) -> FlightEntityWithLogo? {
-        if let flight = flights.first(where: { $0.id == flightId }) {
-            return flight
-        }
-        return nil
     }
 }
 
