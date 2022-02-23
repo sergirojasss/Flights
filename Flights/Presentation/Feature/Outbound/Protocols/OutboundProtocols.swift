@@ -11,6 +11,7 @@ protocol OutboundViewProtocol {
     func reloadFlights(with model: [FlightModel])
     func showError(_ error: ServiceError)
     func goToOutboundFlights(outboundId: Int)
+    func showEmptyStateAndReload()
 }
 
 protocol OutboundRouterProtocol {

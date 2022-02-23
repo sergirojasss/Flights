@@ -30,7 +30,11 @@ extension OutboundPresenter: OutboundPresenterProtocol {
                 guard let self = self else { return }
                 switch event {
                 case .success(let model):
-                    self.view.reloadFlights(with: model)
+                    if model.isEmpty {
+                        self.view.showEmptyStateAndReload()
+                    } else {
+                        self.view.reloadFlights(with: model)
+                    }
                 case .failure(let error):
                     if let _ = error as? ServiceError {
                             guard let error = error as? ServiceError else { return }

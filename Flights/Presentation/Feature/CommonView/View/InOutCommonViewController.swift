@@ -19,11 +19,14 @@ extension InOutCommonViewController {
         static let outboundTitle = "Outbound"
         static let inboundTtitle = "Inbound"
         static let errorTitle = "Error"
-        static let errorDescription = "Ha ocurrido un error"
+        static let errorDescription = "Run for your lifes! it's an Error"
         static let errorOK = "OK"
+        static let tryAgain = "Try Again"
         static let emptyString = ""
         static let emptyTitle = "No matching flights"
         static let emptyDescription = "Try another outbound flight"
+        static let emptyOutboundFlights = "Unable to download flights"
+        static let emptyOutboundDescription = "Please, check your internet connection and try again"
     }
     
 }
@@ -111,6 +114,16 @@ final class InOutCommonViewController: UIViewController {
 }
 
 extension InOutCommonViewController: OutboundViewProtocol {
+    func showEmptyStateAndReload() {
+        let alertView = UIAlertController(title: Strings.emptyOutboundFlights, message: Strings.emptyOutboundDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Strings.tryAgain, style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+            self.presenter?.viewDidload()
+        })
+        alertView.addAction(okAction)
+        present(alertView, animated: true, completion: nil)
+    }
+    
     func goToOutboundFlights(outboundId: Int) {
         presenter?.goToInboundFlights(outboundModelId: outboundId)
     }
