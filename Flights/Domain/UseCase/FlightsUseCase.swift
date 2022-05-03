@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import SwiftUI
 
 enum orderFlightsPrice {
     case asc, desc

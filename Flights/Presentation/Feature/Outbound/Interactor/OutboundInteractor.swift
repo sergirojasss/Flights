@@ -17,7 +17,6 @@ final class DefaultOutboundInteractorDependencies: OutboundInteractorDependencie
 }
 
 final class OutboundInteractor {
-    private let disposeBag = DisposeBag()
     var dependencies: OutboundInteractorDependenciesProtocol
     
     init(dependencies: OutboundInteractorDependenciesProtocol = DefaultOutboundInteractorDependencies()) {
